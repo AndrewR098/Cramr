@@ -24,3 +24,11 @@ public class Main extends Application {
 		launch(args);
 	}
 }
+
+
+//Reference
+//------------------------------------
+//http://www.vogella.com/tutorials/EclipseMaven/article.html
+//https://cwiki.apache.org//confluence/display/MAVEN/MojoFailureException
+//http://webcache.googleusercontent.com/search?q=cache:http://roufid.com/no-compiler-is-provided-in-this-environment/
+//http://roufid.com/no-compiler-is-provided-in-this-environment/
