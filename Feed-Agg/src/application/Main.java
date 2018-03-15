@@ -26,7 +26,7 @@ public class Main extends Application {
 }
 
 
-//Reference
+//Maven References
 //------------------------------------
 //http://www.vogella.com/tutorials/EclipseMaven/article.html
 //https://cwiki.apache.org//confluence/display/MAVEN/MojoFailureException
