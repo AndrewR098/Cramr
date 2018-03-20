@@ -1,7 +1,8 @@
 # Feed-Aggregator-Cramr
 Welcome to Cramr. This application puts your favorite social media platforms all in one place to look at.
 
-#Compiling Instructions in Eclipse (Maven Required)
+-----------------------------------------------------
+# Compiling Instructions in Eclipse (Maven Required)
 1. Right click on the project
 2. [project] --> Run As --> [Maven build...]
 3. Set the Java JRE to the directory of JDK, it can't compile if Maven is set to a JRE environment.
