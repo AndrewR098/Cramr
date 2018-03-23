@@ -40,7 +40,7 @@ public class HomeController implements EventHandler{
 		super();
 	}
 	
-	public void handle(Event event) {
+	public void Homehandle(Event event) {
 		//if (user clicks facebook icon to set up that on their cramer feed)
 		//{
 		try {

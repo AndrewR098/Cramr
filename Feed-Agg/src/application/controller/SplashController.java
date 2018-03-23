@@ -26,7 +26,7 @@ public class SplashController implements EventHandler{
 		super();
 	}
 	
-	public void handle(Event event) {
+	public void SplashHandle(Event event) {
 		//if (user clicks login button)
 		//{
 		try {

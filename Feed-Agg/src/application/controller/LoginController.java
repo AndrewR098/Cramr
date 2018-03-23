@@ -41,7 +41,7 @@ public class LoginController implements EventHandler {
 	 * calls authenticate() to determine if creditials match txt file
 	 */
 	@Override
-	public void handle(Event event) {
+	public void LoginHandle(Event event) {
 		
 		String username = usernameField.getText();
 		String password = passwordField.getText();
