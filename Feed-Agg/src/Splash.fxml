@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="splashButton" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SplashController">
+   <children>
+      <Label layoutX="372.0" layoutY="147.0" prefHeight="163.0" prefWidth="273.0" text="Log in to your Cramr account" />
+      <Button fx:id="splashButton" layoutX="441.0" layoutY="260.0" mnemonicParsing="false" onAction="#loginHandle" text="Login" />
+      <Label layoutX="282.0" layoutY="395.0" prefHeight="53.0" prefWidth="129.0" text="New to Cramr? " />
+      <Hyperlink layoutX="391.0" layoutY="409.0" text="Sign up now" />
+   </children>
+</AnchorPane>
