@@ -1,6 +1,6 @@
 package application.controller;
 
-import java.awt.Event;
+
 import java.io.IOException;
 
 import application.Main;
@@ -40,7 +40,7 @@ public class HomeController implements EventHandler{
 		super();
 	}
 	
-	public void Homehandle(Event event) {
+	public void handle(Event event) {//needed to rename from HomeHandle for EventHandler to work
 		//if (user clicks facebook icon to set up that on their cramer feed)
 		//{
 		try {
