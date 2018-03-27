@@ -25,7 +25,7 @@ public class SplashController implements EventHandler{
 	public SplashController() {
 		super();
 	}
-	
+	//FIXME make sure this is named "handle(Event event)" other names won't work
 	public void SplashHandle(Event event) {
 		//if (user clicks login button)
 		//{

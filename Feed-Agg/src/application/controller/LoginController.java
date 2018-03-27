@@ -36,6 +36,7 @@ public class LoginController implements EventHandler {
 		super();
 	}
 	
+	//FIXME make sure this is named "handle(Event event)" or this won't work nor compile
 	/**
 	 * event handle created
 	 * calls authenticate() to determine if creditials match txt file
