@@ -12,11 +12,13 @@ public class FeedMessage {
     private String author;
     private String guid;
     
-    public FeedMessage(){
-    	
-    }
+    /**
+     * Construct a feed message
+     */
+    public FeedMessage(){}
 
 	/**
+	 * This might not be used when RSS XML is parsed
 	 * @param title
 	 * @param description
 	 * @param link
