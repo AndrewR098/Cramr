@@ -20,7 +20,8 @@ import javafx.scene.layout.AnchorPane;
  * @author Sam Carey
  *
  */
-public class LoginController implements EventHandler {
+public class LoginController// implements EventHandler 
+{
 
 	@FXML
 	Button loginButton;
@@ -41,7 +42,7 @@ public class LoginController implements EventHandler {
 	 * event handle created
 	 * calls authenticate() to determine if creditials match txt file
 	 */
-	@Override
+	//@Override
 	public void LoginHandle(Event event) {
 		
 		String username = usernameField.getText();

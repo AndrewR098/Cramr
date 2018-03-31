@@ -16,7 +16,8 @@ import javafx.scene.layout.AnchorPane;
  *
  */
 
-public class SplashController implements EventHandler{
+public class SplashController //implements EventHandler
+{
 	@FXML
 	Button splashButton;
 	
