@@ -1,65 +1,69 @@
 package application.model;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
-/**
+/*
+ * The UserProfile builds a UserProfile with User/Pass combinations entered by the user
+ * present in users.txt
  * 
- * @author Melina Klein
- * @deprecated
+ * @author Samuel Carey (ial812)
  */
 public class UserProfile {
-/**
- * declared variables
- */
-	private String username;
-	private String password;
-	
-	/**
-	 * Constructor passing two parameters
-	 * @param username
-	 * @param password
-	 */
-	public UserProfile( String username, String password ) { 
-		
-		//2 parameters passed through info read from input txt file
-		this.username = username;
-		this.password = password;
-	}//end constructor
-	
-	/**
-	 * boolean method 
-	 * calls authenticate( String username, String password )
-	 * @param username
-	 * @param password
-	 * @return found if true
-	 */
-	public boolean authenticate( String username, String password ) {
-		
-		//Scan in text file
-		File file;
-		Scanner in;
-		boolean found = false;
-		try {
-			
-			file = new File( "users.txt" );
-			in = new Scanner(file);
-			while ( in.hasNextLine()) {
-				String line = in.nextLine();
-				String [] tokens = line.split( "," );
-				System.out.println();
 
-				if (username.equals(tokens[0]) && password.equals(tokens[1]))
-					found = true;
-			}	
-			in.close();
-				
+	private String user, pass;
+	static File userFile = new File("users.txt");
+	
+	/*
+	 * Constructor
+	 */
+	public UserProfile(){
+		this.user = getUser();
+		this.pass = getPass();
+	}
+	/*
+	 * @param username String from userLogin 
+	 * @param password String from userPass
+	 * 
+	 * UserProfile either returns null if credentials are invalid
+	 * or a UserProifle object with the credentials if they are valid
+	 */
+	public static UserProfile authenticate(String username, String password){	
+		try{
+			Scanner scan = new Scanner(userFile);
 			
-		} catch (IOException e) { 
-			   e.printStackTrace();
-	    } catch ( IndexOutOfBoundsException e ) {
-			   System.out.println( "Out of Bounds" );
-			   e.printStackTrace();
-	    }
-		return found;
-	}//end method
-}//end class
+			
+			while(scan.hasNextLine()){
+				String line = scan.nextLine();
+				String split[] = line.split(",");
+				String userCheck = split[0]; String passCheck = split[1];
+				if(userCheck.equals(username) && passCheck.equals(passCheck)){
+					scan.close();	
+					UserProfile profile =  new UserProfile();
+					profile.setUser(username);
+					profile.setPass(password);
+					return profile;
+				}	
+			}
+		} catch (FileNotFoundException e){
+			e.printStackTrace();	
+		}
+		return null;
+	}
+	
+	
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	
+}
