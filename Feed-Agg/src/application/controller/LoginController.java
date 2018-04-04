@@ -26,19 +26,10 @@ public class LoginController{
 	@FXML PasswordField userPass = new PasswordField();
 	@FXML Button loginButton = new Button();
 	public void handle(Event event) {
-		//incorrect credentials, display Restricted
-		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){//FIXME this is not how UserProfile works
-			System.out.println("aye boi");
-		/*	
-			try {
-				Parent root = FXMLLoader.load(getClass().getResource("/Restricted.fxml"));
-				Scene scene = new Scene(root,1000,700);
-				Main.stage.setScene(scene);
-				Main.stage.show();
-			} catch(Exception e) {
-				e.printStackTrace();
-			}
-			*/
+		//incorrect credentials, needs to do somethin
+		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){
+			System.out.println("INCORRECT LOGIN");
+			//here we deal with bad stuff
 		} else {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
