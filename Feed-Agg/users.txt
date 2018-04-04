@@ -1,3 +1,1 @@
-dude@gmail.com,imadude
-ineda,break
 abc,123

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -7,11 +9,23 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.LoginController">
    <children>
-      <Button fx:id="loginButton" layoutX="132.0" layoutY="255.0" mnemonicParsing="false" onAction="#LoginHandle" text="Log in" />
-      <CheckBox layoutX="255.0" layoutY="259.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="121.0" text="Remeber me" />
-      <Hyperlink layoutX="382.0" layoutY="256.0" text="Forgot password?" />
-      <Label layoutX="98.0" layoutY="51.0" prefHeight="62.0" prefWidth="229.0" text="Log in to Cramr" />
-      <Label layoutX="98.0" layoutY="120.0" prefHeight="37.0" prefWidth="199.0" text="Phone, email or username" />
-      <Label layoutX="98.0" layoutY="155.0" prefHeight="37.0" prefWidth="163.0" text="Password" />
+      <ImageView fitHeight="700.0" fitWidth="700.0">
+         <image>
+            <Image url="@resources/65322-landscape-nature-mountain-sunset-sunrise-sunlight-blurred-Nepal-Himalayas-climbing-rock.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="loginButton" layoutX="254.0" layoutY="408.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="11.0" />
+         </font></Button>
+      <Hyperlink layoutX="368.0" layoutY="409.0" text="Forgot password?" />
+      <Label layoutX="222.0" layoutY="490.0" prefHeight="62.0" prefWidth="229.0" />
+      <TextField fx:id="userLogin" layoutX="254.0" layoutY="320.0" prefHeight="24.0" prefWidth="200.0" promptText="Username or Email" style="-fx-border-color: transparent;" />
+      <PasswordField fx:id="userPass" layoutX="254.0" layoutY="371.0" prefHeight="20.0" prefWidth="200.0" promptText="Password" />
+      <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="254.0" layoutY="215.0">
+         <image>
+            <Image url="@resources/text817-3.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

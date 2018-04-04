@@ -1,10 +1,9 @@
 package application.controller;
 
-
+import java.awt.Event;
 import java.io.IOException;
 
 import application.Main;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
 
  */
 
-public class HomeController implements EventHandler{
+public class HomeController{
 	@FXML
 	Button splashButton;
 	
@@ -31,7 +30,6 @@ public class HomeController implements EventHandler{
 	/**
 	 * This is the landing page; it will display RSS feeds within columns for all feeds like Flickr or any
 	 * other feeds we can stream now
-	 * 
 	 * The user can choose to filter feeds based on site, by clicking on an icon.
 	 * When a user clicks an icon, we will build a new fxml page that is identical to the homepage.fxml except
 	 * it will only display RSS for the selected site
@@ -41,7 +39,7 @@ public class HomeController implements EventHandler{
 		super();
 	}
 	
-	public void handle(Event event) {//needed to rename from HomeHandle for EventHandler to work
+	public void handle(Event event) {
 		//if (user clicks facebook icon to set up that on their cramer feed)
 		//{
 		try {
@@ -62,11 +60,5 @@ public class HomeController implements EventHandler{
 	}
 	
 }
-/** what is this? 
-	@Override
-	public void handle(javafx.event.Event event) {
-		// TODO Auto-generated method stub
-		
-	}
-**/
+
 	

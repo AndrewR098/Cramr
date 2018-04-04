@@ -1,43 +1,32 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
 
-/**
- * Application launcher
- * @author Seth Chick
- *
- */
+
 public class Main extends Application {
-    
-    public static Stage stage;
+	public static Stage stage = new Stage();
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
+			// Load the FXML file for the game board
+			Parent root = FXMLLoader.load(getClass().getResource("../Splash.fxml"));
 			
-			stage = primaryStage;
+			// Set the scene onto the stage
+			primaryStage.setScene(new Scene(root, 700, 700));
 			
+			// Display the board to the user
 			primaryStage.show();
+						
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
 }
-
-
-//Maven References
-//------------------------------------
-//http://www.vogella.com/tutorials/EclipseMaven/article.html
-//https://cwiki.apache.org//confluence/display/MAVEN/MojoFailureException
-//http://webcache.googleusercontent.com/search?q=cache:http://roufid.com/no-compiler-is-provided-in-this-environment/
-//http://roufid.com/no-compiler-is-provided-in-this-environment/

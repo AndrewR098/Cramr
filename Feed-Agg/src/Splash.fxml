@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="splashButton" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SplashController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SplashController">
    <children>
-      <Label layoutX="372.0" layoutY="147.0" prefHeight="163.0" prefWidth="273.0" text="Log in to your Cramr account" />
-      <Button fx:id="splashButton" layoutX="441.0" layoutY="260.0" mnemonicParsing="false" onAction="#SplashHandle" text="Login" />
-      <Label layoutX="282.0" layoutY="395.0" prefHeight="53.0" prefWidth="129.0" text="New to Cramr? " />
-      <Hyperlink layoutX="391.0" layoutY="409.0" text="Sign up now" />
+      <ImageView fitHeight="700.0" fitWidth="700.0">
+         <image>
+            <Image url="@resources/65322-landscape-nature-mountain-sunset-sunrise-sunlight-blurred-Nepal-Himalayas-climbing-rock.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="splashButton" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#handle" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="15.0" />
+         </font></Button>
+      <Button fx:id="signUpButton" layoutX="114.0" layoutY="664.0" mnemonicParsing="false" onAction="#signUpHandle" style="-fx-background-color: transparent;" text="Create a New Account" textFill="#0ac5fa" />
+      <Label layoutX="44.0" layoutY="668.0" text="New to Cramr?" textFill="WHITE" />
+      <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="250.0" layoutY="215.0">
+         <image>
+            <Image url="@resources/text817-3.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
