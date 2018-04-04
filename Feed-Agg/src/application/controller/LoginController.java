@@ -27,7 +27,7 @@ public class LoginController{
 	@FXML Button loginButton = new Button();
 	public void handle(Event event) {
 		//incorrect credentials, display Restricted
-		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){
+		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){//FIXME this is not how UserProfile works
 			System.out.println("aye boi");
 		/*	
 			try {

@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * 
  * @author Melina Klein
- *
+ * @deprecated
  */
 public class UserProfile {
 /**
