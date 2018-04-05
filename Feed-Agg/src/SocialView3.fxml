@@ -77,7 +77,7 @@
          <children>
             <ImageView fitHeight="50.0" fitWidth="200.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../appsProg/Cramr/flickrLogo.png" />
+                  <Image url="@resources/flickrLogo.png" />
                </image>
             </ImageView>
             <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All Activity">
@@ -89,7 +89,7 @@
       </Pane>
       <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="51.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../appsProg/Cramr/cramrImage1.jpg" />
+            <Image url="@resources/cramrImage1.jpg" />
          </image>
       </ImageView>
       <Pane layoutX="51.0" layoutY="240.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
@@ -106,7 +106,7 @@
             </Text>
             <ImageView fitHeight="60.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../appsProg/Cramr/cramrImage2.jpg" />
+                  <Image url="@resources/cramrImage2.jpg" />
                </image>
             </ImageView>
          </children>
@@ -125,7 +125,7 @@
             </Text>
             <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../appsProg/Cramr/cramrImage3.jpg" />
+                  <Image url="@resources/cramrImage3.jpg" />
                </image>
             </ImageView>
          </children>
