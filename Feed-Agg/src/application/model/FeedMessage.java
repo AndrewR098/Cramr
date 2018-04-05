@@ -33,6 +33,9 @@ public class FeedMessage {
 		this.guid = guid;
 	}
 
+	public FeedMessage parseFeed(String input) {
+	    return null;
+	}
 	/**
 	 * @return the title
 	 */
