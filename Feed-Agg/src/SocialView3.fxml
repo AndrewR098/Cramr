@@ -8,19 +8,65 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <Pane layoutX="52.0" layoutY="561.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="97.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LittleJimmy2001">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="97.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#JustKeepSwimming">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="51.0" layoutY="482.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="126.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GamerBoi_11">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="126.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#MasterChief">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="51.0" layoutY="401.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="70.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Swagtastic1997">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="70.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#TacoLife">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="51.0" layoutY="158.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="77.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cat_Lover27">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="77.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#CoolCat">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
       <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: black;">
          <children>
             <Text fill="WHITE" layoutX="149.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="198.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Explore">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="281.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create">
                <font>
                   <Font size="20.0" />
                </font>
@@ -39,86 +85,65 @@
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="121.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="People">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text layoutX="197.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Groups">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
          </children>
       </Pane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="51.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../appsProg/Cramr/cramrImage1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="226.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+      <Pane layoutX="51.0" layoutY="240.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="108.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MrLambo">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="108.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#SickRide">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="60.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../appsProg/Cramr/cramrImage2.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="51.0" layoutY="320.0" prefHeight="60.0" prefWidth="597.0" style="-fx-background-color: white;">
+         <children>
+            <Text layoutX="108.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xXNature_LuvrXx">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="108.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#Beatiful #AtPeace">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../appsProg/Cramr/cramrImage3.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="51.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../appsProg/Cramr/cramrImage2.jpg" />
+            <Image url="@resources/cramrImage4.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="449.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="60.0" fitWidth="108.0" layoutX="51.0" layoutY="482.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../appsProg/Cramr/cramrImage3.jpg" />
+            <Image url="@resources/cramrImage5.jpeg" />
          </image>
       </ImageView>
-      <Pane layoutX="51.0" layoutY="253.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="42.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cat_Lover27">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="51.0" layoutY="443.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="50.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#CoolCat">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="226.0" layoutY="256.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="75.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MrLambo">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="449.0" layoutY="256.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="55.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xXNaturesOwnXx">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="226.0" layoutY="428.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="74.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#SickRide">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
-      <Pane layoutX="449.0" layoutY="428.0" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="72.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#Waterfall">
-               <font>
-                  <Font size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <ImageView fitHeight="60.0" fitWidth="81.0" layoutX="52.0" layoutY="561.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@resources/cramrImage6.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
