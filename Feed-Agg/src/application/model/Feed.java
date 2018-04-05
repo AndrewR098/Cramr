@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+
+import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.*;
 
 /**
@@ -16,13 +18,25 @@ public class Feed {
 
     private URL url;
     private ArrayList<FeedMessage> messages;
+    private SyndFeed feed;
     
     
-    public Feed(URL url) {
+    
+    
+    
+    public Feed(URL url) throws IllegalArgumentException, FeedException, IOException {
 	messages = new ArrayList<FeedMessage>();
+	this.url=url;
+	SyndFeedInput feedInput = new SyndFeedInput();
+	feed = feedInput.build(new XmlReader(url));
 	
     }
     
+    /**
+     * @deprecated
+     * @param url
+     * @throws IOException
+     */
     public void readRSS(URL url) throws IOException {
 	BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 	String line;
@@ -44,6 +58,7 @@ public class Feed {
 	
 	reader.close();
     }
+    
     
     
     
