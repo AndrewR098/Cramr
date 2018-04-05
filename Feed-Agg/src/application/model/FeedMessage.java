@@ -1,9 +1,11 @@
 package application.model;
 
+import com.rometools.rome.feed.synd.SyndFeed;
+
 /**
  * Individual message from RSS
  * @author Seth Chick
- *
+ * @deprecated use {@linkplain SyndFeed} instead
  */
 public class FeedMessage {
 	private String title;
