@@ -13,10 +13,10 @@ public class FeedTest {
     @Test
     public void testFeed() throws Exception {
 	//try {
-	    Feed feed = new Feed(new URL("http://rss.cnn.com/rss/cnn_topstories.rsss"));
+	    //Feed feed = new Feed(new URL("http://rss.cnn.com/rss/cnn_topstories.rsss"));
 	//}catch(Exception e){
 	//    e.printStackTrace();
-	//    fail("Not yet implemented");
+	    fail("Not yet implemented");
 	//}
 	
     }
