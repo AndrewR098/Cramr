@@ -94,5 +94,10 @@
 			<artifactId>rome-osgi-test</artifactId>
 			<version>1.9.0</version>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
 	</dependencies>
 </project>
