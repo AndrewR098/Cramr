@@ -25,171 +25,171 @@ import com.rometools.rome.io.*;
  */
 public class Feed {
 
-    private URL url;
-    private SyndFeed feed;
-    private int slotID;
-    
-    
-    
-    
-    /**
-     * Creates and parses an online feed
-     * @param url URL of the RSS feed
-     * @param slotID the position of the feed on the UI
-     * @throws IllegalArgumentException not a valid feed parser, you don't have to worry about this, I think
-     * @throws FeedException Something went wrong with parsing the feed
-     * @throws IOException Something went wrong retrieving the feed
-     */
-    public Feed(URL url, int slotID) throws IllegalArgumentException, FeedException, IOException {
-	this.url=url;
-	SyndFeedInput feedInput = new SyndFeedInput();
-	feed = feedInput.build(new XmlReader(url));
-	this.slotID = slotID;
-    }
-    
-    /**
-     * @deprecated
-     * @param url
-     * @throws IOException
-     */
-    public void readRSS(URL url) throws IOException {
-	BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-	String line;
-	while((line=reader.readLine())!=null) {
-	    String source = "";
-	    final String startItem = "<item>";
-	    final String endItem = "</item>";
-	    if(line.contains(startItem)) {
-		int firstPos = line.indexOf(startItem);
-		source += line.substring(firstPos)+"\n";
-		boolean endFound = false;
-		int lastPos = 0;
-		while (!endFound) {
-		    //TODO finish this https://www.youtube.com/watch?v=xiK-DH74oJg&ab_channel=FranciscoIacobelli
+	private URL url;
+	private SyndFeed feed;
+	private int slotID;
+
+
+
+
+	/**
+	 * Creates and parses an online feed
+	 * @param url URL of the RSS feed
+	 * @param slotID the position of the feed on the UI
+	 * @throws IllegalArgumentException not a valid feed parser, you don't have to worry about this, I think
+	 * @throws FeedException Something went wrong with parsing the feed
+	 * @throws IOException Something went wrong retrieving the feed
+	 */
+	public Feed(URL url, int slotID) throws IllegalArgumentException, FeedException, IOException {
+		this.url=url;
+		SyndFeedInput feedInput = new SyndFeedInput();
+		feed = feedInput.build(new XmlReader(url));
+		this.slotID = slotID;
+	}
+
+	/**
+	 * @deprecated
+	 * @param url
+	 * @throws IOException
+	 */
+	public void readRSS(URL url) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+		String line;
+		while((line=reader.readLine())!=null) {
+			String source = "";
+			final String startItem = "<item>";
+			final String endItem = "</item>";
+			if(line.contains(startItem)) {
+				int firstPos = line.indexOf(startItem);
+				source += line.substring(firstPos)+"\n";
+				boolean endFound = false;
+				int lastPos = 0;
+				while (!endFound) {
+					//TODO finish this https://www.youtube.com/watch?v=xiK-DH74oJg&ab_channel=FranciscoIacobelli
+				}
+
+			}
 		}
-		
-	    }
+
+		reader.close();
 	}
-	
-	reader.close();
-    }
-    
-    /**
-     * 
-     * @return get Feed itself
-     */
-    public SyndFeed getFeed() {
-	return feed;
-    }
-    
-    /**
-     * 
-     * @return retrieve a list of every entry
-     */
-    public List<SyndEntry> getEntries() {
-	return feed.getEntries();
-    }
-    
-    /**
-     * 
-     * @return url of the feed
-     */
-    public URL getURL() {
-	return url;
-    }
-    
-    /**
-     * Retrieves the title of the feed
-     * @return title of feed, null if none
-     */
-    public String getTitle() {
-	return feed.getTitle();
-    }
-    
-    /**
-     * 
-     * @return slot id of feed
-     */
-    public int getSlotID() {
-	return slotID;
-    }
-    
-    /**
-     * 
-     * @param id slot id of feed
-     */
-    public void setSlotID(int id) {
-	slotID=id;
-    }
-    
-    /**
-     * Gets the savable version of feed to be stored to persistent storage,
-     * you should call this when the user decides to log out and exit and
-     * store this object to memory
-     * @return savable feed
-     * @see FeedPersistent
-     */
-    public FeedPersistent getSerializable() {
-	return new FeedPersistent(url,slotID);
-    }
-    
-    /**
-     * Constructs a previous feed from a file
-     * @param file file to read from
-     * @return Feed if read successful, null if something went wrong
-     * @see FeedPersistent
-     */
-    public static Feed parseSerializableFeed(String file){
-	Object ob = null;
-	try {
-	    FileInputStream fileInput = new FileInputStream(file);
-	    ObjectInputStream obInput = new ObjectInputStream(fileInput);
-	    
-	    ob = obInput.readObject();
-	    
-	    obInput.close();
-	    fileInput.close();
-	}catch (FileNotFoundException e){
-	    e.printStackTrace();
-	    System.err.print("Something went wrong finding this feed.");
-	    return null;
-	}catch(IOException e) {
-	    e.printStackTrace();
-	    System.err.println("Something went wrong reading the file");
-	    return null;
-	} catch (ClassNotFoundException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	    System.err.println("This isn't a FeedPersistent");
-	    return null;
-	    
+
+	/**
+	 * 
+	 * @return get Feed itself
+	 */
+	public SyndFeed getFeed() {
+		return feed;
 	}
-	if(ob instanceof FeedPersistent) {
-		FeedPersistent fp = (FeedPersistent)ob;
-		Feed thisFeed = null;
+
+	/**
+	 * 
+	 * @return retrieve a list of every entry
+	 */
+	public List<SyndEntry> getEntries() {
+		return feed.getEntries();
+	}
+
+	/**
+	 * 
+	 * @return url of the feed
+	 */
+	public URL getURL() {
+		return url;
+	}
+
+	/**
+	 * Retrieves the title of the feed
+	 * @return title of feed, null if none
+	 */
+	public String getTitle() {
+		return feed.getTitle();
+	}
+
+	/**
+	 * 
+	 * @return slot id of feed
+	 */
+	public int getSlotID() {
+		return slotID;
+	}
+
+	/**
+	 * 
+	 * @param id slot id of feed
+	 */
+	public void setSlotID(int id) {
+		slotID=id;
+	}
+
+	/**
+	 * Gets the savable version of feed to be stored to persistent storage,
+	 * you should call this when the user decides to log out and exit and
+	 * store this object to memory
+	 * @return savable feed
+	 * @see FeedPersistent
+	 */
+	public FeedPersistent getSerializable() {
+		return new FeedPersistent(url,slotID);
+	}
+
+	/**
+	 * Constructs a previous feed from a file
+	 * @param file file to read from
+	 * @return Feed if read successful, null if something went wrong
+	 * @see FeedPersistent
+	 */
+	public static Feed parseSerializableFeed(String file){
+		Object ob = null;
 		try {
-		    thisFeed = new Feed(fp.getURL(),fp.getSlotID());
-		}catch(MalformedURLException e) {
-		    System.err.println("Something went wrong parsing for URL");
-		    e.printStackTrace();
-		    return null;
-		} catch (IllegalArgumentException e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
-		    return null;
-		} catch (FeedException e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
-		    return null;
-		} catch (IOException e) {
-		    // TODO Auto-generated catch block
-		    e.printStackTrace();
-		    return null;
+			FileInputStream fileInput = new FileInputStream(file);
+			ObjectInputStream obInput = new ObjectInputStream(fileInput);
+
+			ob = obInput.readObject();
+
+			obInput.close();
+			fileInput.close();
+		}catch (FileNotFoundException e){
+			e.printStackTrace();
+			System.err.print("Something went wrong finding this feed.");
+			return null;
+		}catch(IOException e) {
+			e.printStackTrace();
+			System.err.println("Something went wrong reading the file");
+			return null;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.err.println("This isn't a FeedPersistent");
+			return null;
+
 		}
-		return thisFeed;
-	    }else {
-		System.err.println("This isn't a persistent feed settings.");
-		return null;
-	    }
-    }
+		if(ob instanceof FeedPersistent) {
+			FeedPersistent fp = (FeedPersistent)ob;
+			Feed thisFeed = null;
+			try {
+				thisFeed = new Feed(fp.getURL(),fp.getSlotID());
+			}catch(MalformedURLException e) {
+				System.err.println("Something went wrong parsing for URL");
+				e.printStackTrace();
+				return null;
+			} catch (IllegalArgumentException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			} catch (FeedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return null;
+			}
+			return thisFeed;
+		}else {
+			System.err.println("This isn't a persistent feed settings.");
+			return null;
+		}
+	}
 }
