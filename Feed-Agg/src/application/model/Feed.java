@@ -26,7 +26,6 @@ import com.rometools.rome.io.*;
 public class Feed {
 
     private URL url;
-    private ArrayList<FeedMessage> messages;
     private SyndFeed feed;
     private int slotID;
     
@@ -42,7 +41,6 @@ public class Feed {
      * @throws IOException Something went wrong retrieving the feed
      */
     public Feed(URL url, int slotID) throws IllegalArgumentException, FeedException, IOException {
-	messages = new ArrayList<FeedMessage>();
 	this.url=url;
 	SyndFeedInput feedInput = new SyndFeedInput();
 	feed = feedInput.build(new XmlReader(url));
