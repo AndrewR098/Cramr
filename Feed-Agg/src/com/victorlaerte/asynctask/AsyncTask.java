@@ -7,7 +7,7 @@ import javafx.application.Platform;
  * {@linkplain https://github.com/victorlaerte/javafx-asynctask}
  * @author Victor Oliveira
  */
-public abstract class AsyncTask {
+public abstract class AsyncTask<P> {
 
 	private boolean daemon = true;
 
@@ -19,7 +19,7 @@ public abstract class AsyncTask {
 
 	public abstract void progressCallback(Object... params);
 
-	public void publishProgress(final Object... params) {
+	public void publishProgress(final P... params) {
 
 		Platform.runLater(new Runnable() {
 
