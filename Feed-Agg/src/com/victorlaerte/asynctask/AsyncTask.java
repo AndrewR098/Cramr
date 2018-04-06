@@ -3,6 +3,7 @@ package com.victorlaerte.asynctask;
 import javafx.application.Platform;
 
 /**
+ * This isn't our code, credit goes to the guy marked by the data below.
  * {@linkplain https://github.com/victorlaerte/javafx-asynctask}
  * @author Victor Oliveira
  */
