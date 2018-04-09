@@ -1,66 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutY="79.0" prefHeight="555.0" prefWidth="700.0" style="-fx-background-color: #781616;">
-         <children>
-            <Label layoutX="142.0" layoutY="58.0" text="Label" textFill="#781616" />
-         </children>
-      </Pane>
-      <ImageView fitHeight="22.0" fitWidth="64.0" layoutX="23.0" layoutY="20.0">
+      <ImageView fitHeight="581.0" fitWidth="700.0" layoutY="60.0">
+         <image>
+            <Image url="@resources/65322-landscape-nature-mountain-sunset-sunrise-sunlight-blurred-Nepal-Himalayas-climbing-rockcrop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="13.0" fitWidth="38.0" layoutX="38.0" layoutY="16.0">
          <image>
             <Image url="@resources/tumblr_static_flickr-logo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="91.0" layoutX="132.0" layoutY="22.0">
+      <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="147.0" layoutY="18.0">
          <image>
             <Image url="@resources/twitter.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="121.0" layoutX="279.0" layoutY="24.0">
+      <ImageView fitHeight="22.0" fitWidth="78.0" layoutX="294.0" layoutY="17.0">
          <image>
             <Image url="@resources/white_instagram_text_logo1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="46.0" fitWidth="100.0" layoutX="434.0" layoutY="8.0">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="449.0" layoutY="7.0">
          <image>
             <Image url="@resources/reddit-logo-white.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="100.0" layoutX="563.0" layoutY="19.0">
+      <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="578.0" layoutY="12.0">
          <image>
             <Image url="@resources/facebook-logo-white-full-transparent.png" />
          </image>
       </ImageView>
-      <PasswordField layoutX="234.0" layoutY="339.0" prefHeight="22.0" prefWidth="244.0" promptText="Create new Password" />
-      <PasswordField layoutX="234.0" layoutY="380.0" prefHeight="22.0" prefWidth="244.0" promptText="Confirm Password" />
-      <TextField layoutX="234.0" layoutY="301.0" prefHeight="22.0" prefWidth="244.0" promptText="Enter email, or create new User" />
-      <ImageView fitHeight="22.0" fitWidth="106.0" layoutX="34.0" layoutY="664.0">
+      <PasswordField layoutX="234.0" layoutY="335.0" prefHeight="22.0" prefWidth="244.0" promptText="Create new Password" />
+      <PasswordField layoutX="234.0" layoutY="396.0" prefHeight="22.0" prefWidth="244.0" promptText="Confirm Password" />
+      <TextField layoutX="234.0" layoutY="277.0" prefHeight="22.0" prefWidth="244.0" promptText="Enter email, or create new User" />
+      <ImageView fitHeight="13.0" fitWidth="78.0" layoutX="34.0" layoutY="666.0">
          <image>
             <Image url="@resources/2000px-YouTube_light_logo_(2017).svg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="22.0" fitWidth="106.0" layoutX="203.0" layoutY="664.0">
+      <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="203.0" layoutY="666.0">
          <image>
             <Image url="@resources/pinterestwhite.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="114.0" layoutX="375.0" layoutY="659.0">
+      <ImageView fitHeight="22.0" fitWidth="78.0" layoutX="375.0" layoutY="661.0">
          <image>
             <Image url="@resources/linkedin-logo-white.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="114.0" layoutX="548.0" layoutY="660.0">
+      <ImageView fitHeight="22.0" fitWidth="78.0" layoutX="548.0" layoutY="662.0">
          <image>
             <Image url="@resources/tumblr-9e15e7df.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="256.0" layoutY="174.0">
+         <image>
+            <Image url="@resources/text817-3.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="279.0" layoutY="225.0" prefHeight="22.0" prefWidth="219.0" text="CREATE A NEW ACCOUNT" textFill="#bfb6b6">
+         <font>
+            <Font name="Segoe UI Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="33.0" layoutY="75.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="&lt; HOME" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
