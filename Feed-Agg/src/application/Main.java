@@ -21,17 +21,18 @@ public class Main extends Application {
 			
 			// Display the board to the user
 			primaryStage.show();
+			Main.stage=primaryStage;
 						
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 	public static void main(String[] args) {
-		Launcher.launch(args);
+		launch(args);
 	}
 }
 
-class Launcher extends Application{
+/*class Launcher extends Application{
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -49,4 +50,4 @@ class Launcher extends Application{
 			e.printStackTrace();
 		}
 	}
-}
+}*/
