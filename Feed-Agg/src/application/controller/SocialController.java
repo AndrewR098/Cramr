@@ -15,6 +15,7 @@ public class SocialController {
 	
 	public void handle(Event event) {
 			try {
+				System.out.print("button here");
 				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				stage.setScene(new Scene(root));

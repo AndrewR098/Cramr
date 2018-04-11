@@ -30,6 +30,8 @@ public class HomeController{
 	Button twitterButton;
 	@FXML
 	Button flickrButton;
+	@FXML
+	Button addSocialButton;
 	
 	//@FXML
 	//hyperlink for NewAccount
@@ -76,7 +78,18 @@ public class HomeController{
 				e.printStackTrace();
 			
 			}
+		
+	  } else if(event.getSource() == addSocialButton) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("/AddSocialAccount.fxml"));
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		
 		}
+	}
 		
 	}
 	
