@@ -17,6 +17,7 @@ public class Main extends Application {
 			
 			// Set the scene onto the stage
 			primaryStage.setScene(new Scene(root, 700, 700));
+			primaryStage.setTitle("Cramr");
 			
 			// Display the board to the user
 			primaryStage.show();
