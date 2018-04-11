@@ -14,12 +14,12 @@
             <Image url="@resources/65322-landscape-nature-mountain-sunset-sunrise-sunlight-blurred-Nepal-Himalayas-climbing-rock.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="splashButton" layoutX="263.0" layoutY="319.0" mnemonicParsing="false" onAction="#handle" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: black;" text="Login" textFill="WHITE">
+      <Button fx:id="splashButton" layoutX="263.0" layoutY="309.0" mnemonicParsing="false" onAction="#handle" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: black;" text="Login" textFill="WHITE">
          <font>
             <Font name="Segoe UI Bold" size="15.0" />
          </font></Button>
 
-      <Button fx:id="signUpButton" layoutX="148.0" layoutY="663.0" mnemonicParsing="false" onAction="#signUpHandle" style="-fx-background-color: transparent;" text="Create a New Account" textFill="#0ac5fa" />
+      <Button fx:id="signUpButton" layoutX="115.0" layoutY="663.0" mnemonicParsing="false" onAction="#signUpHandle" style="-fx-background-color: transparent;" text="Create a New Account" textFill="#0ac5fa" />
       <Label layoutX="44.0" layoutY="668.0" text="New to Cramr?" textFill="WHITE" />
       <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="250.0" layoutY="215.0">
          <image>

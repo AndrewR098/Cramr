@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CreateNewController">
    <children>
       <ImageView fitHeight="581.0" fitWidth="700.0" layoutY="60.0">
          <image>
@@ -72,7 +72,7 @@
             <Font name="Segoe UI Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="33.0" layoutY="75.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="&lt; HOME" textFill="WHITE">
+      <Button fx:id="homeButton" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt; HOME" textFill="WHITE">
          <font>
             <Font name="Segoe UI Bold" size="14.0" />
          </font>

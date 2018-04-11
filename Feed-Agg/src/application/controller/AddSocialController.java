@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 
-public class addSocialAccount {
+public class AddSocialController {
 
 		@FXML 
 		Button homeButton;
