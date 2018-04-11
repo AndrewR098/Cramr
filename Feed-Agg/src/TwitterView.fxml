@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.TwitterController">
    <children>
       <Pane layoutX="50.0" layoutY="236.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #00aced; -fx-border-width: 3;">
          <children>
@@ -25,6 +25,11 @@
                   <Image url="@resources/twitter.png" />
                </image>
             </ImageView>
+            <Button fx:id="homeButton" layoutX="615.0" layoutY="13.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
       <Pane layoutX="50.0" layoutY="65.0" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #00d5f1; -fx-border-width: 3;">

@@ -8,10 +8,8 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
-import com.rometools.modules.activitystreams.types.File;
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.*;
@@ -52,6 +50,7 @@ public class Feed {
 	 * @param url
 	 * @throws IOException
 	 */
+	@Deprecated
 	public void readRSS(URL url) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 		String line;

@@ -5,12 +5,14 @@ import java.io.IOException;
 
 import application.Main;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 /**
  * @author Sam Carey
  * @author Melina KleinΩxcv d
@@ -23,7 +25,11 @@ import javafx.scene.layout.AnchorPane;
 
 public class HomeController{
 	@FXML
-	Button splashButton;
+	Button facebookButton;
+	@FXML
+	Button twitterButton;
+	@FXML
+	Button flickrButton;
 	
 	//@FXML
 	//hyperlink for NewAccount
@@ -41,23 +47,37 @@ public class HomeController{
 	}
 	
 	public void handle(Event event) {
-		//if (user clicks facebook icon to set up that on their cramer feed)
-		//{
-		try {
-			// Load the FXML document (we created with SceneBuilder)
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation( Main.class.getResource("../FacebookView.fxml") );
-						
-					// Load the layout from the FXML and add it to the scene
-					AnchorPane layout = (AnchorPane) loader.load();				
-					Scene scene = new Scene( layout );
-						
-					// Set the scene to stage and show the stage to the user
-					Main.stage.setScene(scene);
-			}catch ( IOException e ) {
+		if(event.getSource() == facebookButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/FacebookView.fxml"));
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
 				e.printStackTrace();
-						
-			}		
+			}
+		} else if(event.getSource() == twitterButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/TwitterView.fxml"));
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		} else if(event.getSource() == flickrButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/SocialView3.fxml"));
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			
+			}
+		}
+		
 	}
 	
 }

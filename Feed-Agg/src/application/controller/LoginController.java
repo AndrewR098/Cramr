@@ -1,8 +1,4 @@
 package application.controller;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import application.Main;
 import application.model.UserProfile;
 import javafx.event.*;
 import javafx.event.Event;
@@ -13,20 +9,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 /*
  * The LoginController Class handles Login event, displaying appropriate fxml
  * @author Samuel Carey (ial812)
  */
 import javafx.stage.Stage;
 
-public class LoginController{	
+public class LoginController implements EventHandler{
+	
 	@FXML TextField userLogin = new TextField();
 	@FXML PasswordField userPass = new PasswordField();
 	@FXML Button loginButton = new Button();
+	
+	@Override
 	public void handle(Event event) {
-		//incorrect credentials, needs to do somethin
+		//incorrect credentials, needs to do something
 		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){
 			System.out.println("INCORRECT LOGIN");
 			//here we deal with bad stuff

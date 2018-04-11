@@ -1,10 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="850.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeController">
+   <children>
+      <ListView fx:id="fbFeed" layoutX="121.0" layoutY="28.0" prefHeight="620.0" prefWidth="200.0" />
+      <ListView fx:id="twitterFeed" layoutX="364.0" layoutY="28.0" prefHeight="620.0" prefWidth="200.0" />
+      <ListView fx:id="flickrFeed" layoutX="599.0" layoutY="28.0" prefHeight="620.0" prefWidth="200.0" />
+      <ToolBar layoutX="121.0" layoutY="648.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: e7e7e7;">
+        <items>
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="Refresh" />
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="New Post" />
+        </items>
+      </ToolBar>
+      <ToolBar layoutX="364.0" layoutY="648.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: e7e7e7;">
+         <items>
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="Refresh" />
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="New Tweet" />
+         </items>
+      </ToolBar>
+      <ToolBar layoutX="599.0" layoutY="648.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: e7e7e7;">
+         <items>
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="Refresh" />
+            <Button mnemonicParsing="false" style="-fx-background-color: lightgrey;" text="New Upload" />
+         </items>
+      </ToolBar>
+      <Pane prefHeight="700.0" prefWidth="58.0" style="-fx-background-color: darkgrey;">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="28.0" layoutX="15.0" layoutY="186.0">
+               <image>
+                  <Image url="@resources/Location_arithmetic_horizontal.svg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="8.0" layoutY="166.0">
+               <image>
+                  <Image url="@resources/facebook-outline-512.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="3.0" layoutY="31.0">
+               <image>
+                  <Image url="@resources/circletwitter.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="8.0" layoutY="100.0">
+               <image>
+                  <Image url="@resources/2585-flickr-round-logo1.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="twitterButton" layoutX="6.0" layoutY="34.0" mnemonicParsing="false" onAction="#handle" prefHeight="44.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="flickrButton" layoutX="7.0" layoutY="97.0" mnemonicParsing="false" onAction="#handle" prefHeight="44.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="facebookButton" layoutX="6.0" layoutY="165.0" mnemonicParsing="false" onAction="#handle" prefHeight="44.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>

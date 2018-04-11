@@ -7,6 +7,7 @@ import com.rometools.rome.feed.synd.SyndFeed;
  * @author Seth Chick
  * @deprecated use {@linkplain SyndFeed} instead
  */
+@Deprecated
 public class FeedMessage {
 	private String title;
     private String description;
