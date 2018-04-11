@@ -11,7 +11,62 @@
    <children>
       <Pane layoutX="50.0" layoutY="236.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #00aced; -fx-border-width: 3;">
          <children>
-            <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ThatOneGuyy: Almost TOTALLY lost it today #MomForgotMyLunch">
+            <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ThatOneGuyy: Almost TOTALLY lost it today #MomForgotMyLunch">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@oLeCoDrBoI: drop by our local hackathon tonight at 8pm">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@JaredFromSubway: I can always go for a fresh turkey sub #footlong">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@MsMakeup: Just posted a new eyeshadow review #subscribe">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@GamingNation: We are hosting another tournament next Saturday @ 3:30 #BringYourOwnController">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@TheMeanProfessor: Don't forget to turn in your homework.">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@SharkBoy238: Who wants tacos? #TacosForLife #TacosAreLife">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Sarah39: Love going home and spending time with my family on spring break #chillaxin">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Cris98: Happy 19th birthday to myself #whoDidntKnow">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@SportsRUs: #DEZCAUGHTIT">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@96SammY: I'm feelin real lonely today">
+               <font>
+                  <Font name="Segoe UI Light" size="12.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Cymbalta: @96SammY #DepressionHurtsCymbaltaCanHelp">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
