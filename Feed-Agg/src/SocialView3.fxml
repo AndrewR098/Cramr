@@ -9,9 +9,9 @@
 
 <AnchorPane layoutY="-45.0" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SocialController">
    <children>
-      <Pane focusTraversable="true" layoutY="41.0" prefHeight="59.0" prefWidth="700.0" style="-fx-background-color: black;">
+      <Pane focusTraversable="false" layoutY="41.0" prefHeight="59.0" prefWidth="700.0" style="-fx-background-color: black;">
          <children>
-            <Button fx:id="homeButton" focusTraversable="false" layoutX="607.0" layoutY="13.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
+            <Button fx:id="homeButton" focusTraversable="true" layoutX="607.0" layoutY="13.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
