@@ -23,7 +23,7 @@
       <Label layoutX="44.0" layoutY="668.0" text="New to Cramr?" textFill="WHITE" />
       <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="250.0" layoutY="215.0">
          <image>
-            <Image url="@resources/text817-3.pn" />
+            <Image url="@resources/text817-3.png" />
          </image>
       </ImageView>
    </children>
