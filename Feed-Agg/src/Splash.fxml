@@ -18,6 +18,7 @@
          <font>
             <Font name="Segoe UI Bold" size="15.0" />
          </font></Button>
+
       <Button fx:id="signUpButton" layoutX="148.0" layoutY="663.0" mnemonicParsing="false" onAction="#signUpHandle" style="-fx-background-color: transparent;" text="Create a New Account" textFill="#0ac5fa" />
       <Label layoutX="44.0" layoutY="668.0" text="New to Cramr?" textFill="WHITE" />
       <ImageView fitHeight="42.0" fitWidth="200.0" layoutX="250.0" layoutY="215.0">
