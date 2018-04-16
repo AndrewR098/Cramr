@@ -8,6 +8,7 @@ import twitter4j.auth.RequestToken;
 
 public class UserTwitter {
 	private Twitter twitter = new TwitterFactory().getInstance();
+	private AccessToken access;
 
 	public void twitterAuthentication() {
 		//TODO: Figure out how we can store keys
@@ -28,8 +29,10 @@ public class UserTwitter {
 				try {
 					if (pin.length() > 0) {
 						accessToken = twitter.getOAuthAccessToken(reqToken, pin);
+						this.access = accessToken;
 					} else {
 						accessToken = twitter.getOAuthAccessToken(reqToken);
+						this.access = accessToken;
 					}
 
 				} catch (TwitterException te) {
@@ -47,5 +50,10 @@ public class UserTwitter {
 		} catch (TwitterException te){
 			te.printStackTrace();
 		}
+		
+	}
+	
+	public void postUserStatus(){
+		
 	}
 }
