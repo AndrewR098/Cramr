@@ -13,7 +13,7 @@ public class UserTwitter {
 		//TODO: Figure out how we can store keys
 		try {
 			RequestToken reqToken = null;
-				reqToken = twitter.getOAuthRequestToken();
+			reqToken = twitter.getOAuthRequestToken();
 			
 
 			System.out.println("Got request token.");

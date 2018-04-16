@@ -11,66 +11,68 @@
    <children>
       <Pane layoutX="50.0" layoutY="236.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #00aced; -fx-border-width: 3;">
          <children>
-            <Text layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@ThatOneGuyy: Almost TOTALLY lost it today #MomForgotMyLunch">
+            <Text fx:id="statusOne" layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER1">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@oLeCoDrBoI: drop by our local hackathon tonight at 8pm">
+            <Text fx:id="statusTwo" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER2">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@JaredFromSubway: I can always go for a fresh turkey sub #footlong">
+            <Text fx:id="statusThree" layoutX="14.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER3">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@MsMakeup: Just posted a new eyeshadow review #subscribe">
+            <Text fx:id="statusFour" layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER4">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@GamingNation: We are hosting another tournament next Saturday @ 3:30 #BringYourOwnController">
+            <Text fx:id="statusFive" layoutX="14.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER5">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@TheMeanProfessor: Don't forget to turn in your homework.">
+            <Text fx:id="statusSix" layoutX="14.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER6">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@SharkBoy238: Who wants tacos? #TacosForLife #TacosAreLife">
+            <Text fx:id="statusSeven" layoutX="14.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER7">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Sarah39: Love going home and spending time with my family on spring break #chillaxin">
+            <Text fx:id="statusEight" layoutX="14.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER8">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Cris98: Happy 19th birthday to myself #whoDidntKnow">
+            <Text fx:id="statusNine" layoutX="14.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER9">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@SportsRUs: #DEZCAUGHTIT">
+            <Text fx:id="statusTen" layoutX="14.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER10">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@96SammY: I'm feelin real lonely today">
+            <Text fx:id="statusEleven" layoutX="14.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER11">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
-            <Text layoutX="14.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@Cymbalta: @96SammY #DepressionHurtsCymbaltaCanHelp">
+            <Text fx:id="statusTwelve" layoutX="14.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER12">
                <font>
                   <Font name="Segoe UI Light" size="12.0" />
                </font>
             </Text>
+            <Text fx:id="statusThirteen" layoutX="14.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER13" />
+            <Text fx:id="statusFourteen" layoutX="14.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\@USER14" />
          </children>
       </Pane>
       <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #00aced; -fx-border-color: white; -fx-border-width: 3;">
@@ -89,13 +91,13 @@
       </Pane>
       <Pane layoutX="50.0" layoutY="65.0" prefHeight="150.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #00d5f1; -fx-border-width: 3;">
          <children>
-            <TextArea prefHeight="150.0" prefWidth="600.0" style="-fx-border-width: 3; -fx-border-color: #00aced;" />
+            <TextArea fx:id="userStatus" prefHeight="150.0" prefWidth="600.0" style="-fx-border-width: 3; -fx-border-color: #00aced;" />
             <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font size="12.0" />
                </font>
             </Text>
-            <Button layoutX="513.0" layoutY="101.0" mnemonicParsing="false" text="Tweet" textFill="#00aced">
+            <Button layoutX="513.0" layoutY="101.0" mnemonicParsing="false" onAction="#postTweet" text="Tweet" textFill="#00aced">
                <font>
                   <Font name="Segoe UI Light" size="18.0" />
                </font>
