@@ -26,5 +26,6 @@
             <Image url="@resources/text817-3.png" />
          </image>
       </ImageView>
+      <Button fx:id="rssTestButton" layoutX="637.0" layoutY="671.0" mnemonicParsing="false" text="RSS Test" />
    </children>
 </AnchorPane>
