@@ -9,6 +9,8 @@ import com.rometools.rome.io.FeedException;
 import com.victorlaerte.asynctask.AsyncTask;
 
 import application.model.Feed;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -52,9 +54,18 @@ public class RSSTestController implements Initializable {
 			}
 			public void onPostExecute(){
 				//TODO: update views
+				updateFeed();
 			}
 		};
 		task.execute();
+	}
+	
+	private void updateFeed(){
+		ObservableList<String> oList = FXCollections.observableArrayList();
+		String feedTitle = feed.getEntries().get(0).getTitle();
+		oList.add(feedTitle);
+		list.getItems().add(feedTitle);
+		
 	}
 
 }
