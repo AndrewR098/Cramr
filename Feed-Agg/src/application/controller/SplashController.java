@@ -19,7 +19,7 @@ public class SplashController implements EventHandler {
 	@FXML
 	Button signUpButton;
 	@FXML
-	Button splashButton;
+	Button splashButton, rssTestButton;
 	@FXML
 	private TextField usernameField;
 
@@ -43,5 +43,16 @@ public class SplashController implements EventHandler {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}		
+	}
+	
+	public void handleTest(Event event){
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("/RSSTest.fxml"));
+			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			stage.setScene(new Scene(root));
+			stage.show();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
