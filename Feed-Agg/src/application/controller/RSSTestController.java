@@ -85,7 +85,7 @@ public class RSSTestController implements Initializable {
 	}
 	
 	public void open(MouseEvent event){
-		int selection = event.getPickResult().getIntersectedFace();
+		//int selection = event.getPickResult().getIntersectedFace();
 		int selection2 = list.getSelectionModel().getSelectedIndex();
 		if(selection2>=0)
 			Main.openWebpageExternal(feed.getEntries().get(selection2).getLink());
