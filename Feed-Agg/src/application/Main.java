@@ -6,8 +6,24 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
+/**
+ * 
+ * @author Seth Chick
+ *
+ */
 public class Main extends Application {
+	private static Application app;
+	
+	/**
+	 * Open the system default web browser with the
+	 * {@link java.lang.String String} URI.
+	 * @param uri link to open
+	 * @see https://stackoverflow.com/questions/16604341/how-can-i-open-the-default-system-browser-from-a-java-fx-application
+	 */
+	public static void openWebpageExternal(String uri){
+		app.getHostServices().showDocument(uri);
+	}
+	
 	public static Stage stage;
 	@Override
 	public void start(Stage primaryStage) {
@@ -22,6 +38,7 @@ public class Main extends Application {
 			// Display the board to the user
 			primaryStage.show();
 			Main.stage=primaryStage;
+			app = this;
 						
 		} catch(Exception e) {
 			e.printStackTrace();
