@@ -21,6 +21,11 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+/**
+ * Example class for RSS
+ * @author Seth Chick
+ *
+ */
 public class RSSTestController implements Initializable {
 
 	Feed feed;
