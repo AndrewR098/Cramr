@@ -63,32 +63,29 @@ public class UserProfile {
 		//update file which holds all subreddits for this user
 		BufferedWriter bw = null;
 		FileWriter fw = null;
-		for (int i=0; i<subreddits.size(); i++) {
+		
+		try {
+			// if file does not exist, create the file.
+			if (!subredditsFile.exists()) {
+				subredditsFile.createNewFile();
+			}
+			fw = new FileWriter(subredditsFile.getAbsoluteFile(), true);
+			bw = new BufferedWriter(fw);
+			
+			bw.write(str);
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
 			try {
-				String data = subreddits.get(i);
-				
-				// if file does not exist, create the file.
-				if (!subredditsFile.exists()) {
-					subredditsFile.createNewFile();
+				if (bw != null) {
+					bw.close();
 				}
-				fw = new FileWriter(subredditsFile.getAbsoluteFile(), true);
-				bw = new BufferedWriter(fw);
-				
-				bw.write(data);
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
-				try {
-					if (bw != null) {
-						bw.close();
-					}
-					if (fw != null) {
-						fw.close();
-					}
-				} catch (IOException ex) {
-					ex.printStackTrace();
+				if (fw != null) {
+					fw.close();
 				}
+			} catch (IOException ex) {
+				ex.printStackTrace();
 			}
 		}
 	}
