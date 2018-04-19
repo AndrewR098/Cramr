@@ -14,6 +14,8 @@ import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.*;
 
+import javafx.application.Platform;
+
 /**
  * Manages feed from one URL. This also stores the slot on the UI tabs on which position it's at.
  * YOU MUST HANDLE THESE EXCEPTIONS IN THE CONTROLLER ITSELF SINCE THIS
@@ -39,6 +41,7 @@ public class Feed {
 	 * @throws IOException Something went wrong retrieving the feed
 	 */
 	public Feed(URL url, int slotID) throws IllegalArgumentException, FeedException, IOException {
+	    assert !Platform.isFxApplicationThread() : "Do not call this on the main thread.";
 		this.url=url;
 		SyndFeedInput feedInput = new SyndFeedInput();
 		feed = feedInput.build(new XmlReader(url));
