@@ -26,45 +26,51 @@ public class CreateNewController {
 	Button buttonCreateNew;
 	
 	public void handle(Event event) {
+		// if the passwords match
 		if ( fieldPassword.getText().equals( fieldConfirmPassword.getText() ) ) {
-			BufferedWriter bw = null;
-			FileWriter fw = null;
-			try {
-				String data = "\n" + fieldEmailOrUser.getText() + "," + fieldPassword.getText();
-				
-				File file = new File("users.txt");
-				
-				// if file does not exist, create the file.
-				if (!file.exists()) {
-					file.createNewFile();
-				}
-				fw = new FileWriter(file.getAbsoluteFile(), true);
-				bw = new BufferedWriter(fw);
-				
-				bw.write(data);
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			} finally {
+			// if the fields are not blank
+			if (fieldEmailOrUser.getText().isEmpty() || fieldPassword.getText().isEmpty() ) {
+				System.out.println("Please fill in all fields.\n");
+			} else { //create a new user
+				BufferedWriter bw = null;
+				FileWriter fw = null;
 				try {
-					if (bw != null) {
-						bw.close();
+					String data = "\n" + fieldEmailOrUser.getText() + "," + fieldPassword.getText();
+					
+					File file = new File("users.txt");
+					
+					// if file does not exist, create the file.
+					if (!file.exists()) {
+						file.createNewFile();
 					}
-					if (fw != null) {
-						fw.close();
+					fw = new FileWriter(file.getAbsoluteFile(), true);
+					bw = new BufferedWriter(fw);
+					
+					bw.write(data);
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						if (bw != null) {
+							bw.close();
+						}
+						if (fw != null) {
+							fw.close();
+						}
+					} catch (IOException ex) {
+						ex.printStackTrace();
 					}
-				} catch (IOException ex) {
-					ex.printStackTrace();
 				}
-			}
-			
-			try {
-				Parent root = FXMLLoader.load(getClass().getResource("/Splash.fxml"));
-				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-				stage.setScene(new Scene(root));
-				stage.show();
-			} catch(Exception e) {
-				e.printStackTrace();
+				
+				try {
+					Parent root = FXMLLoader.load(getClass().getResource("/Splash.fxml"));
+					Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+					stage.setScene(new Scene(root));
+					stage.show();
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
 			}
 			
 		} else {

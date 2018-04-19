@@ -9,32 +9,99 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #353839;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddSocialController">
    <children>
+      <TabPane layoutY="318.0" prefHeight="382.0" prefWidth="700.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Twitter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="700.0">
+                     <children>
+                        <PasswordField fx:id="twitterPasswordText" layoutX="286.0" layoutY="136.0" onAction="#handle" />
+                        <Label layoutX="217.0" layoutY="99.0" text="Username:" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="221.0" layoutY="138.0" text="Password:" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="twitterLoginButton" layoutX="331.0" layoutY="176.0" mnemonicParsing="false" onAction="#handle" text="Login">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="twitterUsernameText" layoutX="286.0" layoutY="97.0" onAction="#handle" />
+                        <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="317.0" layoutY="52.0">
+                           <image>
+                              <Image url="@resources/twitter.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Reddit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="102.0" layoutY="100.0" text="Subreddit: (all lowercase, no spaces)  /r" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="311.0" layoutY="49.0">
+                           <image>
+                              <Image url="@resources/reddit-logo-white.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="subredditText" layoutX="298.0" layoutY="97.0" onAction="#handle" />
+                        <Button fx:id="addSubredditButton" layoutX="321.0" layoutY="139.0" mnemonicParsing="false" onAction="#handle" text="Add subreddit">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Facebook">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="facebookEmailText" layoutX="289.0" layoutY="95.0" onAction="#handle" />
+                        <Button fx:id="facebookLoginButton" layoutX="334.0" layoutY="174.0" mnemonicParsing="false" onAction="#handle" text="Login">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="224.0" layoutY="136.0" text="Password:" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="244.0" layoutY="97.0" text="Email:" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="12.0" />
+                           </font>
+                        </Label>
+                        <PasswordField fx:id="facebookPasswordText" layoutX="289.0" layoutY="134.0" onAction="#handle" />
+                        <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="323.0" layoutY="46.0">
+                           <image>
+                              <Image url="@resources/facebook-logo-white-full-transparent.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
       <Label layoutX="222.0" layoutY="124.0" text="Add An Account" textFill="WHITE">
          <font>
             <Font name="Segoe UI Light" size="36.0" />
          </font>
       </Label>
-      <PasswordField layoutX="289.0" layoutY="363.0" />
-      <TextField layoutX="289.0" layoutY="318.0" />
-      <Label layoutX="179.0" layoutY="321.0" text="Username/Email:" textFill="WHITE">
-         <font>
-            <Font name="Segoe UI Light" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="210.0" layoutY="366.0" text="Password:" textFill="WHITE">
-         <font>
-            <Font name="Segoe UI Light" size="12.0" />
-         </font>
-      </Label>
-      <Button layoutX="232.0" layoutY="237.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="78.0" text="Twitter Button" />
-      <Button layoutX="519.0" layoutY="237.0" mnemonicParsing="false" opacity="0.0" prefHeight="13.0" prefWidth="66.0" text="Facebook Button" />
-      <Button layoutX="372.0" layoutY="240.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="85.0" text="reddit button" />
-      <Button layoutX="115.0" layoutY="237.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="66.0" text="Flickr" />
-      <Button layoutX="332.0" layoutY="413.0" mnemonicParsing="false" text="Login">
-         <font>
-            <Font name="Segoe UI Light" size="12.0" />
-         </font>
-      </Button>
       <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="519.0" layoutY="237.0">
          <image>
             <Image url="@resources/facebook-logo-white-full-transparent.png" />

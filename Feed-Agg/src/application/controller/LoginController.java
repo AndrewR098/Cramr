@@ -21,6 +21,8 @@ public class LoginController implements EventHandler{
 	@FXML PasswordField userPass = new PasswordField();
 	@FXML Button loginButton = new Button();
 	
+	public static UserProfile currentUser = null;
+	
 	@Override
 	public void handle(Event event) {
 		//incorrect credentials, needs to do something
@@ -28,6 +30,9 @@ public class LoginController implements EventHandler{
 			System.out.println("INCORRECT LOGIN");
 			//here we deal with bad stuff
 		} else {
+			
+			currentUser = new UserProfile( userLogin.getText(),userPass.getText() );
+			
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

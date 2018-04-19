@@ -66,6 +66,7 @@
             <Button fx:id="facebookButton" layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
             <Button fx:id="twitterButton" layoutX="6.0" layoutY="137.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
             <Button fx:id="addSocialButton" layoutX="5.0" layoutY="281.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="redditButton" layoutX="7.0" layoutY="195.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
          </children></Pane>
       <ToolBar layoutX="64.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
          <items>
