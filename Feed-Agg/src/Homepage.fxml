@@ -25,41 +25,35 @@
       </ToolBar>
       <Pane prefHeight="700.0" prefWidth="45.0" style="-fx-background-color: #FBE870;">
          <children>
-            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="6.0" layoutY="18.0">
-               <image>
-                  <Image url="@resources/2585-flickr-round-logo1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="77.0">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="30.0">
                <image>
                   <Image url="@resources/facebook-outline-512.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="133.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="86.0">
                <image>
                   <Image url="@resources/circletwitter.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="195.0">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="148.0">
                <image>
                   <Image url="@resources/reddit-outline.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="7.0" layoutY="226.0">
+            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="7.0" layoutY="179.0">
                <image>
                   <Image url="@resources/Location_arithmetic_horizontal.svg.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="5.0" layoutY="281.0">
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="5.0" layoutY="234.0">
                <image>
                   <Image url="@resources/plusSign.png" />
                </image>
             </ImageView>
-            <Button fx:id="flickrButton" layoutX="6.0" layoutY="18.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="facebookButton" layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="twitterButton" layoutX="6.0" layoutY="137.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="281.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="redditButton" layoutX="7.0" layoutY="195.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="facebookButton" layoutX="7.0" layoutY="29.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="twitterButton" layoutX="6.0" layoutY="90.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="234.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="redditButton" layoutX="7.0" layoutY="148.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
          </children></Pane>
       <ToolBar layoutX="582.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
          <items>
@@ -187,5 +181,10 @@
       </Label>
       <ListView fx:id="fbFeed311" layoutX="69.0" layoutY="52.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
       <ListView fx:id="fbFeed312" layoutX="587.0" layoutY="51.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <Label layoutX="647.0" layoutY="230.0" text="Coming Soon...">
+         <font>
+            <Font name="Segoe UI" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
