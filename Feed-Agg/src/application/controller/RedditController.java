@@ -85,6 +85,7 @@ public class RedditController implements Initializable{
 				};
 				task.execute();
 			}
+			scan.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
