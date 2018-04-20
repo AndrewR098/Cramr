@@ -62,7 +62,8 @@ public class UserProfile {
 		//update file which holds all subreddits for this user
 		BufferedWriter bw = null;
 		FileWriter fw = null;
-		boolean alreadyThere = false;
+		int fileSize = 0;
+		int fileCounter = 0;
 		
 		try {
 			File subredditsFile = new File(filename);
@@ -79,11 +80,19 @@ public class UserProfile {
 			bw = new BufferedWriter(fw);
 			
 			while ( scan.hasNextLine() ) {
+				fileSize++;
+				scan.nextLine();
+			}
+			scan.close();
+			scan = new Scanner(subredditsFile);
+			//scan.reset();
+			while ( scan.hasNextLine() ) {
+				fileCounter++;
 				if ( scan.nextLine().equals(str) ) {
 					System.out.println("Subreddit already added to this user profile.");
-					alreadyThere = true;
+					break;
 				} 
-				if ( !(alreadyThere) ) {
+				if ( fileCounter == fileSize ) {
 					bw.write(str);
 					bw.newLine();
 				}
