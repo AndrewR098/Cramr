@@ -181,7 +181,7 @@
       </Label>
       <ListView fx:id="fbFeed311" layoutX="69.0" layoutY="52.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
       <ListView fx:id="fbFeed312" layoutX="587.0" layoutY="51.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
-      <Label layoutX="647.0" layoutY="230.0" text="Coming Soon...">
+      <Label layoutX="647.0" layoutY="230.0" text="Coming Soon....">
          <font>
             <Font name="Segoe UI" size="18.0" />
          </font>
