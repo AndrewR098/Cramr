@@ -50,16 +50,19 @@ public class RedditController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		
 		File file = new File("subreddits" + LoginController.currentUser.user + ".txt");
+		
 		if (!file.exists())
 			System.out.println("file doesn't exist");
+		
 		Scanner scan;
+		
 		try {
 			scan = new Scanner(file);
 			while (scan.hasNextLine()) {
 				final String currentSubreddit = "https://www.reddit.com/r/" + scan.nextLine() + "/.rss";
-				
-				AsyncTask task = new AsyncTask(){
+				AsyncTask task = new AsyncTask(){	
 					public void doInBackground(){
+						
 						try{
 							feed = new Feed(new URL(currentSubreddit),0);
 						} catch(MalformedURLException e){
