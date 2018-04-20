@@ -35,14 +35,17 @@ public class RedditController implements Initializable{
 	@FXML
 	ListView<String> subreddits;
 	
-	public void handle(Event event) {
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setScene(new Scene(root));
-			stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
+	public void handle(Event event1) {
+		Button pressedButton = (Button) event1.getSource();
+		if (pressedButton == homeButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
+				Stage stage = (Stage) ((Node) event1.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
