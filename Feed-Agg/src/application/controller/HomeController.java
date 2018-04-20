@@ -67,7 +67,7 @@ public class HomeController{
 			}
 			
 		} else if(event.getSource() == flickrButton) {
-			try {
+			try {//FIXME: flickr button still exists
 				Parent root = FXMLLoader.load(getClass().getResource("/SocialView3.fxml"));
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 				stage.setScene(new Scene(root));
