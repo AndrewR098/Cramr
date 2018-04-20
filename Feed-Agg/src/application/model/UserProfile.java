@@ -12,13 +12,13 @@ import application.controller.LoginController;
  */
 public class UserProfile {
 
-	private static String user;
-	private static String pass;
+	public String user;
+	private String pass;
 	static File userFile = new File("users.txt");
-	static File subredditsFile = new File("subreddits" + user);
 	
 	//TESTING
-	private ArrayList<String> subreddits = new ArrayList<String>();
+	//private ArrayList<String> subreddits = new ArrayList<String>();
+	// NO SUBREDDITS OBJECT, JUST A .TXT FILE FOR THE GIVEN USER
 	// TODO: add twitter object
 	// TODO: add facebook object
 	
@@ -51,28 +51,44 @@ public class UserProfile {
 				}	
 			}
 		} catch (FileNotFoundException e){
-			e.printStackTrace();	
+			e.printStackTrace();
 		}
 		return null;
 	}
 	
 	public void addSubreddit(String str) {
-		//update the arraylist with the new subreddit
-		this.subreddits.add(str);
+		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
 		
 		//update file which holds all subreddits for this user
 		BufferedWriter bw = null;
 		FileWriter fw = null;
+		boolean alreadyThere = false;
 		
 		try {
+			File subredditsFile = new File(filename);
+			Scanner scan = new Scanner(subredditsFile);
 			// if file does not exist, create the file.
 			if (!subredditsFile.exists()) {
-				subredditsFile.createNewFile();
+				try {
+					subredditsFile.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 			fw = new FileWriter(subredditsFile.getAbsoluteFile(), true);
 			bw = new BufferedWriter(fw);
 			
-			bw.write(str);
+			while ( scan.hasNextLine() ) {
+				if ( scan.nextLine().equals(str) ) {
+					System.out.println("Subreddit already added to this user profile.");
+					alreadyThere = true;
+				} 
+				if ( !(alreadyThere) ) {
+					bw.write(str);
+					bw.newLine();
+				}
+			}
+			scan.close();
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -90,9 +106,9 @@ public class UserProfile {
 		}
 	}
 	
-	public ArrayList<String> getSubreddits() {
+	/*public ArrayList<String> getSubreddits() {
 		return subreddits;
-	}
+	}*/
 	
 	public String getUser() {
 		return user;
