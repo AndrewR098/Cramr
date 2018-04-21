@@ -25,7 +25,7 @@
       </Pane>
       <Pane layoutX="50.0" layoutY="51.0" prefHeight="635.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: ff4500; -fx-border-width: 3;">
          <children>
-            <ListView fx:id="subreddits" prefHeight="635.0" prefWidth="600.0" />
+            <ListView fx:id="subreddits" onMouseClicked="#open" prefHeight="635.0" prefWidth="600.0" />
          </children>
       </Pane>
    </children>
