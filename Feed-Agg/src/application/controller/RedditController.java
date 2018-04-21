@@ -5,9 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import com.rometools.rome.feed.synd.SyndEntry;
+import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.victorlaerte.asynctask.AsyncTask;
 
@@ -29,11 +33,15 @@ import javafx.stage.Stage;
 
 public class RedditController implements Initializable{
 	
-	Feed feed;
+	ArrayList<Feed> feeds;
+	List<SyndEntry> messages;
+	ArrayList<String> messageContent;
 	@FXML 
 	Button homeButton;
 	@FXML
 	ListView<String> subreddits;
+	
+	
 	
 	public void handle(Event event1) {
 		Button pressedButton = (Button) event1.getSource();
@@ -51,7 +59,9 @@ public class RedditController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		feeds = new ArrayList<Feed>();
+		messages = new ArrayList<SyndEntry>();
+		messageContent= new ArrayList<String>();
 		File file = new File("subreddits" + LoginController.currentUser.user + ".txt");
 		
 		if (!file.exists())
@@ -63,7 +73,8 @@ public class RedditController implements Initializable{
 			scan = new Scanner(file);
 			while (scan.hasNextLine()) {
 				final String currentSubreddit = "https://www.reddit.com/r/" + scan.nextLine() + "/.rss";
-				AsyncTask task = new AsyncTask(){	
+				AsyncTask task = new AsyncTask(){
+				    Feed feed;
 					public void doInBackground(){
 						
 						try{
@@ -86,7 +97,7 @@ public class RedditController implements Initializable{
 					}
 					public void onPostExecute(){
 						//TODO: update views
-						updateFeed();
+						updateFeed(feed);
 					}
 				};
 				task.execute();
@@ -105,16 +116,33 @@ public class RedditController implements Initializable{
 		}*/
 		
 	}
-	private void updateFeed(){
-		ObservableList<String> oList = FXCollections.observableArrayList();
-		String feedTitle = feed.getEntries().get(0).getTitle();
-		oList.add(feedTitle);
-		subreddits.getItems().add(feedTitle);
+	
+	/**
+	 * Adds to the feed display
+	 * @param feed current feed to pass
+	 */
+	private synchronized void updateFeed(Feed feed){
+		//ObservableList<String> oList = FXCollections.observableArrayList();
+		//String feedTitle = feed.getEntries().get(0).getTitle();
+		//oList.add(feedTitle);
+		//subreddits.getItems().add(feedTitle);
+	    List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
+	    List<String> content = new ArrayList<String>(); //make String list for ListView
+	    
+	    feeds.add(feed);
+	    for(int i = 0; i<mess.size(); i++) {
+		messages.add(mess.get(i));
+		content.add(mess.get(i).getTitle());
+		messageContent.add(mess.get(i).getTitle());
+	    }
+	    
+	    subreddits.getItems().setAll(messageContent);
+	    
 	}
 	public void open(MouseEvent event){
 		//int selection = event.getPickResult().getIntersectedFace();
 		int selection2 = subreddits.getSelectionModel().getSelectedIndex();
 		if(selection2>=0)
-			Main.openWebpageExternal(feed.getEntries().get(selection2).getLink());
+			Main.openWebpageExternal(messages.get(selection2).getLink());
 	}
 }
