@@ -1,6 +1,9 @@
 # Feed-Aggregator-Cramr
 Welcome to Cramr. This application puts your favorite social media platforms all in one place to look at.
 
+# Dummy Login
+- Username: abc
+- Password: 123
 -----------------------------------------------------
 # Compiling Instructions in Eclipse (Maven Required)
 1. Right click on the project
@@ -14,3 +17,7 @@ Welcome to Cramr. This application puts your favorite social media platforms all
 5. Press [ok]
 6. After compiling successfully, go to [Project] --> [Run As] --> [Java Application]
 7. And there you go, you now have the application running on your computer.
+--------------------------------------------------------
+# Removed features due to certain circumstances
+- Facebook had to be discontinued due to changes to their system after the whole privacy controversy
+- Flickr was discontinued
