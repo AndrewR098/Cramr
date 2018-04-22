@@ -4,6 +4,7 @@ Welcome to Cramr. This application puts your favorite social media platforms all
 # Dummy Login
 - Username: abc
 - Password: 123
+
 Or you can create your own.
 -----------------------------------------------------
 # Compiling Instructions in Eclipse (Maven Required)
