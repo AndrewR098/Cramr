@@ -44,7 +44,7 @@ public class UserProfile {
 				String line = scan.nextLine();
 				String split[] = line.split(",");
 				String userCheck = split[0]; String passCheck = split[1];
-				if(userCheck.equals(username) && passCheck.equals(passCheck)){
+				if(userCheck.equals(username) && passCheck.equals(password)){
 					scan.close();	
 					UserProfile profile = new UserProfile(username,password);
 					return profile;
