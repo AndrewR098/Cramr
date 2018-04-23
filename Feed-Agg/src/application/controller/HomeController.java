@@ -31,7 +31,7 @@ import javafx.stage.Stage;
 /**
  * @author Sam Carey
  * @author Melina KleinΩxcv d
- * 
+ * @author Seth Chick
  * 
  * 
  * 
@@ -54,7 +54,7 @@ public class HomeController implements Initializable{
 	@FXML
 	ListView<String> rdtFeed;
 	@FXML
-	Button rdtRefreshButton;
+	Button rdtRefreshButton, rdtSubs;
 	
 	ArrayList<Feed> rFeeds;
 	List<SyndEntry> rMessages;
@@ -129,6 +129,8 @@ public class HomeController implements Initializable{
 		}
 		else if(event.getSource() == rdtRefreshButton){
 			refreshReddit();
+		}else if(event.getSource() == rdtSubs){
+			redditSubscriptions();
 		}
 
 	}
@@ -171,9 +173,11 @@ public class HomeController implements Initializable{
 	 * @param event unused
 	 */
 	public void onRedditClicked(MouseEvent event){
-		int selection2 = rdtFeed.getSelectionModel().getSelectedIndex();
-		if(selection2>=0)
-			Main.openWebpageExternal(rMessages.get(selection2).getLink());
+		if(!rFeeds.isEmpty()){
+			int selection2 = rdtFeed.getSelectionModel().getSelectedIndex();
+			if(selection2>=0)
+				Main.openWebpageExternal(rMessages.get(selection2).getLink());
+		}
 	}
 	/**
 	 * Refresh Reddit feed. 
@@ -229,7 +233,27 @@ public class HomeController implements Initializable{
 	}
 	
 	public void redditSubscriptions(){
+		rFeeds.clear();
+		rMessageContent.clear();
+		rMessages.clear();
+		ArrayList<String> subList = new ArrayList<String>();
+		File file = new File("subreddits" + LoginController.currentUser.user + ".txt");
+		if(file.exists()){
+			try {
+				Scanner scan = new Scanner(file);
+				while(scan.hasNextLine()){
+					subList.add(scan.nextLine());
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		if(subList.isEmpty()){
+			subList.add("No Subscriptions.");
+		}
 		
+		rdtFeed.getItems().setAll(subList);
 	}
 	///////////////////REDDIT END////////////////////////////////
 }

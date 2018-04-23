@@ -14,7 +14,7 @@
       <ToolBar layoutX="64.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
         <items>
             <Button fx:id="rdtRefreshButton" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
-            <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="Subscriptions" textFill="#fbe870" />
+            <Button fx:id="rdtSubs" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: grey;" text="Subscriptions" textFill="#fbe870" />
         </items>
       </ToolBar>
       <ToolBar layoutX="323.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
