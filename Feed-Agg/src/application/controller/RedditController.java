@@ -77,7 +77,8 @@ public class RedditController implements Initializable{
 		try {
 			scan = new Scanner(file);
 			while (scan.hasNextLine()) {
-				final String currentSubreddit = "https://www.reddit.com/r/" + scan.nextLine() + "/.rss";
+				String name = scan.nextLine();
+				final String currentSubreddit = "https://www.reddit.com/r/" + name + "/.rss";
 				AsyncTask task = new AsyncTask(){
 				    Feed feed;
 					public void doInBackground(){
@@ -102,7 +103,7 @@ public class RedditController implements Initializable{
 					}
 					public void onPostExecute(){
 						//TODO: update views
-						updateFeed(feed);
+						updateFeed(feed, name);
 					}
 				};
 				task.execute();
@@ -126,7 +127,7 @@ public class RedditController implements Initializable{
 	 * Adds to the feed display
 	 * @param feed current feed to pass
 	 */
-	private synchronized void updateFeed(Feed feed){
+	private synchronized void updateFeed(Feed feed, String name){
 		//ObservableList<String> oList = FXCollections.observableArrayList();
 		//String feedTitle = feed.getEntries().get(0).getTitle();
 		//oList.add(feedTitle);
@@ -136,9 +137,9 @@ public class RedditController implements Initializable{
 	    
 	    feeds.add(feed);
 	    for(int i = 0; i<mess.size(); i++) {
-		messages.add(mess.get(i));
-		content.add(mess.get(i).getTitle());
-		messageContent.add(mess.get(i).getTitle());
+	    	messages.add(mess.get(i));
+	    	content.add(mess.get(i).getTitle());
+	    	messageContent.add("r/"+name+": "+mess.get(i).getTitle());	
 	    }
 	    
 	    subreddits.getItems().setAll(messageContent);
