@@ -10,11 +10,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import twitter4j.Twitter;
+import twitter4j.TwitterFactory;
 
 public class TwitterController {
 	@FXML Button homeButton;
 	@FXML TextArea userStatus;
 	@FXML Text statusOne, statusTwo, statusThree, statusFour, statusFive, statusSix, statusSeven, statusEight, statusNine, statusTen, statusEleven, statusTwelve, statusThirteen, statusFourteen;
+	private static Twitter usertwitter = new TwitterFactory().getInstance();
+	
 	
 	public void handle(Event event) {
 			try {
