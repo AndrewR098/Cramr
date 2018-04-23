@@ -165,7 +165,10 @@ public class HomeController implements Initializable{
 			rMessageContent.add(mess.get(i).getTitle());
 	    }
 	    
-	    rdtFeed.getItems().setAll(rMessageContent);
+	    if(!rMessageContent.isEmpty())
+	    	rdtFeed.getItems().setAll(rMessageContent);
+	    else
+	    	rdtFeed.getItems().setAll("No subscriptions");
 	    
 	}
 	/**
