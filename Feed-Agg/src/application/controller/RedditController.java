@@ -31,6 +31,11 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+* Handles the Reddit specific UI.
+* @author Seth Chick
+* @author Casey
+**/
 public class RedditController implements Initializable{
 	
 	ArrayList<Feed> feeds;
