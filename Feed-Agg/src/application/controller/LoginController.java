@@ -1,4 +1,7 @@
 package application.controller;
+import java.io.File;
+import java.io.IOException;
+
 import application.model.UserProfile;
 import javafx.event.*;
 import javafx.event.Event;
@@ -32,6 +35,17 @@ public class LoginController implements EventHandler{
 		} else {
 			
 			currentUser = new UserProfile( userLogin.getText(),userPass.getText() );
+			String filename = "subreddits" + LoginController.currentUser.user + ".txt";
+			File subredditsFile = new File(filename);
+			if (!subredditsFile.exists()) {
+				try {
+					subredditsFile.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			} else{
+				
+			}
 			
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));

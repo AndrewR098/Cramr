@@ -64,18 +64,13 @@ public class UserProfile {
 		FileWriter fw = null;
 		int fileSize = 0;
 		int fileCounter = 0;
+		boolean dont = true;
 		
 		try {
 			File subredditsFile = new File(filename);
 			Scanner scan = new Scanner(subredditsFile);
 			// if file does not exist, create the file.
-			if (!subredditsFile.exists()) {
-				try {
-					subredditsFile.createNewFile();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+			
 			fw = new FileWriter(subredditsFile.getAbsoluteFile(), true);
 			bw = new BufferedWriter(fw);
 			
@@ -86,16 +81,22 @@ public class UserProfile {
 			scan.close();
 			scan = new Scanner(subredditsFile);
 			//scan.reset();
-			while ( scan.hasNextLine() ) {
+			while (scan.hasNextLine() ) {
 				fileCounter++;
 				if ( scan.nextLine().equals(str) ) {
 					System.out.println("Subreddit already added to this user profile.");
+					dont = false;
 					break;
 				} 
 				if ( fileCounter == fileSize ) {
 					bw.write(str);
 					bw.newLine();
+					dont = false;
 				}
+			}
+			if( fileCounter == fileSize && dont) {
+				bw.write(str);
+				bw.newLine();
 			}
 			scan.close();
 			
