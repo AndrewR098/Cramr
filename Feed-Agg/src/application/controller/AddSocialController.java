@@ -1,5 +1,7 @@
 package application.controller;
 
+import application.controller.LoginController;
+import java.io.*;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,13 +29,15 @@ public class AddSocialController {
 		@FXML
 		Button addSubredditButton;
 		@FXML
+		Button removeSubredditButton;
+		@FXML
 		TextField facebookEmailText;
 		@FXML
 		PasswordField facebookPasswordText;
 		@FXML
 		Button facebookLoginButton;
 		
-		public void handle(Event event) {
+		public void handle(Event event) throws IOException {
 			Button pressedButton = (Button) event.getSource();
 			if (pressedButton == homeButton) {
 				try {
@@ -69,6 +73,13 @@ public class AddSocialController {
 				} else {
 					//add subreddit to users list of subreddits
 					LoginController.currentUser.addSubreddit(subredditText.getText());
+				}
+			}
+			if (pressedButton == removeSubredditButton) {
+				if (subredditText.getText() == null || subredditText.getText() == "") {
+					System.out.println("subreddit field is blank");
+				} else {
+					LoginController.currentUser.removeSubreddit(subredditText.getText());
 				}
 			}
 		}
