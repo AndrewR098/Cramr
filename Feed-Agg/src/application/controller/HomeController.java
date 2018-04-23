@@ -227,6 +227,10 @@ public class HomeController implements Initializable{
 			e1.printStackTrace();
 		}
 	}
+	
+	public void redditSubscriptions(){
+		
+	}
 	///////////////////REDDIT END////////////////////////////////
 }
 
