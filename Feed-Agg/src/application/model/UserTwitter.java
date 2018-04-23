@@ -7,12 +7,19 @@ import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 
 public class UserTwitter {
-	private Twitter twitter = new TwitterFactory().getInstance();
+	private Twitter twitter;
 	private AccessToken access;
+	
+	public UserTwitter(){
+		this.twitter = new TwitterFactory().getInstance();
+	}
 
+	/* This needs to be reworked around FXML, primarily getting the pin from a text field. Controller will need its own authentication method to handle the inbetween.
+	   This method may need to be overall trashed/overhauled as a result. 
+	*/
 	public void twitterAuthentication() {
 		//TODO: Figure out how we can store keys
-		try {
+/*		try {
 			RequestToken reqToken = null;
 			reqToken = twitter.getOAuthRequestToken();
 			
@@ -21,11 +28,10 @@ public class UserTwitter {
 			System.out.println("Request token: " + reqToken.getToken());
 			System.out.println("Request token secret: " + reqToken.getTokenSecret());
 			AccessToken accessToken = null;
-
 			while (accessToken == null) {
 				System.out.println(reqToken.getAuthenticationURL());
 				System.out.println("Enter the PIN(If given) and hit enter after access is granted:");
-				String pin = null; // TODO: GET PIN FROM FIELD
+				String pin = ; // TODO: GET PIN FROM FIELD
 				try {
 					if (pin.length() > 0) {
 						accessToken = twitter.getOAuthAccessToken(reqToken, pin);
@@ -49,7 +55,7 @@ public class UserTwitter {
 			}
 		} catch (TwitterException te){
 			te.printStackTrace();
-		}
+		} */
 		
 	}
 	
