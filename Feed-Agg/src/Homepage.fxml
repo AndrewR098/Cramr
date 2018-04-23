@@ -9,10 +9,9 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="850.0" style="-fx-background-color: #353839;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.HomeController">
    <children>
-      <ListView fx:id="fbFeed" layoutX="64.0" layoutY="47.0" prefHeight="260.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
+      <ListView fx:id="fbFeed" layoutX="64.0" layoutY="47.0" prefHeight="589.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
       <ListView fx:id="twitterFeed" layoutX="323.0" layoutY="47.0" prefHeight="589.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
-      <ListView fx:id="flickrFeed" layoutX="582.0" layoutY="47.0" prefHeight="589.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
-      <ToolBar layoutX="64.0" layoutY="310.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
+      <ToolBar layoutX="64.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
         <items>
             <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
             <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="Subscriptions" textFill="#fbe870" />
@@ -24,86 +23,62 @@
             <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="New Tweet" textFill="#fbe870" />
          </items>
       </ToolBar>
-      <ToolBar layoutX="582.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
-         <items>
-            <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
-            <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="86.0" style="-fx-background-color: grey;" text="New Upload" textFill="#fbe870" />
-         </items>
-      </ToolBar>
       <Pane prefHeight="700.0" prefWidth="45.0" style="-fx-background-color: #FBE870;">
          <children>
-            <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="6.0" layoutY="18.0">
-               <image>
-                  <Image url="@resources/2585-flickr-round-logo1.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="77.0">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="30.0">
                <image>
                   <Image url="@resources/facebook-outline-512.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="133.0">
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="86.0">
                <image>
                   <Image url="@resources/circletwitter.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="195.0">
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="148.0">
                <image>
                   <Image url="@resources/reddit-outline.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="7.0" layoutY="226.0">
+            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="7.0" layoutY="179.0">
                <image>
                   <Image url="@resources/Location_arithmetic_horizontal.svg.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="5.0" layoutY="281.0">
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="5.0" layoutY="234.0">
                <image>
                   <Image url="@resources/plusSign.png" />
                </image>
             </ImageView>
-            <Button fx:id="flickrButton" layoutX="6.0" layoutY="18.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="facebookButton" layoutX="7.0" layoutY="76.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="twitterButton" layoutX="6.0" layoutY="137.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="281.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="facebookButton" layoutX="7.0" layoutY="29.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="twitterButton" layoutX="6.0" layoutY="90.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="234.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="redditButton" layoutX="7.0" layoutY="148.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
          </children></Pane>
-      <ToolBar layoutX="64.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
+      <ToolBar layoutX="582.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
          <items>
             <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
             <Button mnemonicParsing="false" style="-fx-background-color: grey;" text="New Post" textFill="#fbe870" />
          </items>
       </ToolBar>
-      <ListView fx:id="fbFeed1" layoutX="64.0" layoutY="376.0" prefHeight="260.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
+      <ListView fx:id="fbFeed1" layoutX="582.0" layoutY="47.0" prefHeight="589.0" prefWidth="250.0" style="-fx-background-color: lightgrey;" />
       <Label layoutX="161.0" layoutY="22.0" text="REDDIT" textFill="#fbe870">
          <font>
             <Font name="Segoe UI Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="414.0" layoutY="22.0" text="TWITTER" textFill="#fbe870">
+      <Label layoutX="420.0" layoutY="22.0" text="TWITTER" textFill="#fbe870">
          <font>
             <Font name="Segoe UI Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="679.0" layoutY="22.0" text="FLICKR" textFill="#fbe870">
-         <font>
-            <Font name="Segoe UI Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="151.0" layoutY="352.0" text="FACEBOOK" textFill="#fbe870">
+      <Label layoutX="673.0" layoutY="22.0" text="FACEBOOK" textFill="#fbe870">
          <font>
             <Font name="Segoe UI Bold" size="13.0" />
          </font>
       </Label>
       <ListView fx:id="fbFeed2" layoutX="132.0" layoutY="49.0" prefHeight="255.0" prefWidth="0.0" style="-fx-background-color: lightgrey;" />
-      <ListView fx:id="fbFeed3" layoutX="69.0" layoutY="52.0" prefHeight="250.0" prefWidth="240.0" style="-fx-background-color: white;" />
       <ListView fx:id="fbFeed31" layoutX="328.0" layoutY="52.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
-      <Slider layoutX="294.0" layoutY="114.0" opacity="0.5" orientation="VERTICAL" rotate="180.0" />
-      <Separator layoutX="82.0" layoutY="90.0" prefWidth="200.0" />
-      <Separator layoutX="81.0" layoutY="131.0" prefWidth="200.0" />
-      <Separator layoutX="84.0" layoutY="289.0" prefWidth="200.0" />
-      <Separator layoutX="84.0" layoutY="211.0" prefWidth="200.0" />
-      <Separator layoutX="82.0" layoutY="251.0" prefWidth="200.0" />
-      <Separator layoutX="82.0" layoutY="171.0" prefWidth="200.0" />
       <Separator layoutX="344.0" layoutY="171.0" prefWidth="200.0" />
       <Separator layoutX="344.0" layoutY="251.0" prefWidth="200.0" />
       <Separator layoutX="346.0" layoutY="211.0" prefWidth="200.0" />
@@ -120,42 +95,6 @@
       <Separator layoutX="348.0" layoutY="498.0" prefWidth="200.0" />
       <Separator layoutX="349.0" layoutY="457.0" prefWidth="200.0" />
       <Slider layoutX="555.0" layoutY="120.0" opacity="0.5" orientation="VERTICAL" prefHeight="357.0" prefWidth="13.0" rotate="180.0" />
-      <Label layoutX="84.0" layoutY="57.0" text="r/pol">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="83.0" layoutY="73.0" prefHeight="14.0" prefWidth="191.0" text="CONGRESS DECISION-- Net Neutrality is " />
-      <Label layoutX="83.0" layoutY="113.0" prefHeight="14.0" prefWidth="191.0" text="IMAGE {VIEW NOT ACCESSABLE} Header:" />
-      <Label layoutX="84.0" layoutY="97.0" text="r/funny">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="84.0" layoutY="137.0" text="r/funny">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="83.0" layoutY="153.0" prefHeight="14.0" prefWidth="191.0" text="Mods, can you stop pushing terrible..." />
-      <Label layoutX="83.0" layoutY="193.0" prefHeight="14.0" prefWidth="191.0" text="It was 1987, I didn't know where I was..." />
-      <Label layoutX="84.0" layoutY="177.0" text="r/nosleep">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="84.0" layoutY="217.0" text="r/pokemon">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
-      <Label layoutX="83.0" layoutY="233.0" prefHeight="14.0" prefWidth="191.0" text="10 years ago today, Pokemon yellow..." />
-      <Label layoutX="83.0" layoutY="273.0" prefHeight="14.0" prefWidth="191.0" text="Check out my new stuff, I got this in the mail" />
-      <Label layoutX="84.0" layoutY="257.0" text="r/pokemon">
-         <font>
-            <Font name="System Bold" size="11.0" />
-         </font>
-      </Label>
       <Label layoutX="344.0" layoutY="261.0" text="\@heyLookAnotherUser">
          <font>
             <Font name="System Bold" size="11.0" />
@@ -240,122 +179,12 @@
             <Font name="System Bold" size="11.0" />
          </font>
       </Label>
-      <Pane layoutX="598.0" layoutY="187.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="78.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="xXNature_LuvrXx">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="78.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#Beatiful #AtPeace">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage3.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="598.0" layoutY="135.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="78.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MrLambo">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="78.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#SickRide">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage2.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="598.0" layoutY="83.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="57.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cat_Lover27">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="57.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#CoolCat">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="56.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage1.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="598.0" layoutY="239.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="50.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Swagtastic1997">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="50.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#TacoLife">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage4.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="598.0" layoutY="292.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="96.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GamerBoi_11">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="96.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#MasterChief">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage5.jpeg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Pane layoutX="599.0" layoutY="345.0" prefHeight="45.0" prefWidth="210.0" style="-fx-background-color: white;">
-         <children>
-            <Text layoutX="67.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LittleJimmy2001">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <Text layoutX="67.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="#JustKeepSwimming">
-               <font>
-                  <Font name="Segoe UI" size="12.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="45.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/cramrImage6.jpg" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Slider layoutX="815.0" layoutY="130.0" opacity="0.5" orientation="VERTICAL" prefHeight="357.0" prefWidth="13.0" rotate="180.0" />
-      <ListView fx:id="fbFeed32" layoutX="69.0" layoutY="381.0" prefHeight="250.0" prefWidth="240.0" style="-fx-background-color: white;" />
-      <Slider layoutX="294.0" layoutY="445.0" opacity="0.5" orientation="VERTICAL" rotate="180.0" />
+      <ListView fx:id="fbFeed311" layoutX="69.0" layoutY="52.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <ListView fx:id="fbFeed312" layoutX="587.0" layoutY="51.0" prefHeight="579.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <Label layoutX="647.0" layoutY="230.0" text="Coming Soon....">
+         <font>
+            <Font name="Segoe UI" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

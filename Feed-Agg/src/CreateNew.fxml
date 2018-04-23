@@ -39,9 +39,9 @@
             <Image url="@resources/facebook-logo-white-full-transparent.png" />
          </image>
       </ImageView>
-      <PasswordField layoutX="234.0" layoutY="335.0" prefHeight="22.0" prefWidth="244.0" promptText="Create new Password" />
-      <PasswordField layoutX="234.0" layoutY="396.0" prefHeight="22.0" prefWidth="244.0" promptText="Confirm Password" />
-      <TextField layoutX="234.0" layoutY="277.0" prefHeight="22.0" prefWidth="244.0" promptText="Enter email, or create new User" />
+      <PasswordField fx:id="fieldPassword" layoutX="234.0" layoutY="335.0" onAction="#handle" prefHeight="22.0" prefWidth="244.0" promptText="Create new Password" />
+      <PasswordField fx:id="fieldConfirmPassword" layoutX="234.0" layoutY="395.0" onAction="#handle" prefHeight="22.0" prefWidth="244.0" promptText="Confirm Password" />
+      <TextField fx:id="fieldEmailOrUser" layoutX="234.0" layoutY="275.0" onAction="#handle" prefHeight="22.0" prefWidth="244.0" promptText="Enter email, or create new User" />
       <ImageView fitHeight="13.0" fitWidth="78.0" layoutX="34.0" layoutY="666.0">
          <image>
             <Image url="@resources/2000px-YouTube_light_logo_(2017).svg.png" />
@@ -77,5 +77,6 @@
             <Font name="Segoe UI Bold" size="14.0" />
          </font>
       </Button>
+      <Button fx:id="buttonCreateNew" layoutX="363.0" layoutY="455.0" mnemonicParsing="false" onAction="#handle" text="Create New Account" />
    </children>
 </AnchorPane>

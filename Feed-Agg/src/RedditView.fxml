@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane style="-fx-background-color: e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.RedditController">
+   <children>
+      <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: ff4500; -fx-border-color: white; -fx-border-width: 3;">
+         <children>
+            <Button fx:id="homeButton" layoutX="615.0" layoutY="13.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="63.0" fitWidth="139.0" layoutY="-6.0">
+               <image>
+                  <Image url="@resources/reddit-logo-white.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="50.0" layoutY="51.0" prefHeight="635.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: ff4500; -fx-border-width: 3;">
+         <children>
+            <ListView fx:id="subreddits" onMouseClicked="#open" prefHeight="635.0" prefWidth="600.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
