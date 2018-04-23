@@ -53,6 +53,8 @@ public class HomeController implements Initializable{
 	/////////////////REDDIT//////////////////////
 	@FXML
 	ListView<String> rdtFeed;
+	@FXML
+	Button rdtRefreshButton;
 	
 	ArrayList<Feed> rFeeds;
 	List<SyndEntry> rMessages;
@@ -94,7 +96,7 @@ public class HomeController implements Initializable{
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
-			
+
 		} else if(event.getSource() == flickrButton) {
 			try {//FIXME: flickr button still exists
 				Parent root = FXMLLoader.load(getClass().getResource("/SocialView3.fxml"));
@@ -103,29 +105,32 @@ public class HomeController implements Initializable{
 				stage.show();
 			} catch(Exception e) {
 				e.printStackTrace();
-			
+
 			}
-		
-	  } else if(event.getSource() == addSocialButton) {
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/AddSocialAccount.fxml"));
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setScene(new Scene(root));
-			stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
+
+		} else if(event.getSource() == addSocialButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/AddSocialAccount.fxml"));
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if (event.getSource() == redditButton) {
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/RedditView.fxml"));
+				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
-	} else if (event.getSource() == redditButton) {
-		try {
-			Parent root = FXMLLoader.load(getClass().getResource("/RedditView.fxml"));
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-			stage.setScene(new Scene(root));
-			stage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
+		else if(event.getSource() == rdtRefreshButton){
+			refreshReddit();
 		}
-	}
-		
+
 	}
 	
 	
@@ -134,6 +139,46 @@ public class HomeController implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		//Reddit/////////////////////////////////////
+		refreshReddit();
+		//////////////////REDDIT: END///////////////////////////
+		
+	}
+	//////////////////////////REDDIT START///////////////////////
+	/**
+	 * Adds to the Reddit feed display
+	 * @param feed current feed to pass
+	 */
+	private synchronized void updateFeed(Feed feed){
+		//ObservableList<String> oList = FXCollections.observableArrayList();
+		//String feedTitle = feed.getEntries().get(0).getTitle();
+		//oList.add(feedTitle);
+		//subreddits.getItems().add(feedTitle);
+	    List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
+	    List<String> content = new ArrayList<String>(); //make String list for ListView
+	    
+	    rFeeds.add(feed);
+	    for(int i = 0; i<mess.size(); i++) {
+	    	rMessages.add(mess.get(i));
+			content.add(mess.get(i).getTitle());
+			rMessageContent.add(mess.get(i).getTitle());
+	    }
+	    
+	    rdtFeed.getItems().setAll(rMessageContent);
+	    
+	}
+	/**
+	 * Opens clicked reddit feed
+	 * @param event unused
+	 */
+	public void onRedditClicked(MouseEvent event){
+		int selection2 = rdtFeed.getSelectionModel().getSelectedIndex();
+		if(selection2>=0)
+			Main.openWebpageExternal(rMessages.get(selection2).getLink());
+	}
+	/**
+	 * Refresh Reddit feed. 
+	 */
+	public void refreshReddit(){
 		rFeeds = new ArrayList<Feed>();
 		rMessages = new ArrayList<SyndEntry>();
 		rMessageContent= new ArrayList<String>();
@@ -181,40 +226,6 @@ public class HomeController implements Initializable{
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
-		//////////////////REDDIT: END///////////////////////////
-		
-	}
-	//////////////////////////REDDIT START///////////////////////
-	/**
-	 * Adds to the Reddit feed display
-	 * @param feed current feed to pass
-	 */
-	private synchronized void updateFeed(Feed feed){
-		//ObservableList<String> oList = FXCollections.observableArrayList();
-		//String feedTitle = feed.getEntries().get(0).getTitle();
-		//oList.add(feedTitle);
-		//subreddits.getItems().add(feedTitle);
-	    List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
-	    List<String> content = new ArrayList<String>(); //make String list for ListView
-	    
-	    rFeeds.add(feed);
-	    for(int i = 0; i<mess.size(); i++) {
-		rMessages.add(mess.get(i));
-		content.add(mess.get(i).getTitle());
-		rMessageContent.add(mess.get(i).getTitle());
-	    }
-	    
-	    rdtFeed.getItems().setAll(rMessageContent);
-	    
-	}
-	/**
-	 * Opens clicked reddit feed
-	 * @param event unused
-	 */
-	public void onRedditClick(MouseEvent event){
-		int selection2 = rdtFeed.getSelectionModel().getSelectedIndex();
-		if(selection2>=0)
-			Main.openWebpageExternal(rMessages.get(selection2).getLink());
 	}
 	///////////////////REDDIT END////////////////////////////////
 }
