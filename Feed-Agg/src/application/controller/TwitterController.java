@@ -10,7 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import twitter4j.ResponseList;
+import twitter4j.Status;
 import twitter4j.Twitter;
+import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
 public class TwitterController {
@@ -33,16 +36,23 @@ public class TwitterController {
 	}
 	
 	public void postTweet(){
+		String toPost = userStatus.getText();
 		userStatus.setText("");
-		// Need a Twitter object to post the status.
+		try {
+			Status status = usertwitter.updateStatus(toPost);
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// Should assume the user is authenticated(?)
 	}
 	
 	public void initialize(){
-		// Get the user timeline! Display the first 14 statuses we generate. Need a twitter object.
-	}
-	
-	public void postStatus(){
-		//TODO: Get the text from the textfield. Post it using Twitter4J libraries.
+		try {
+			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
