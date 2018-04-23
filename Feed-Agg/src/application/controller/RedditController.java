@@ -144,6 +144,10 @@ public class RedditController implements Initializable{
 	    subreddits.getItems().setAll(messageContent);
 	    
 	}
+	/**
+	 * Open Reddit Feed
+	 * @param event
+	 */
 	public void open(MouseEvent event){
 		//int selection = event.getPickResult().getIntersectedFace();
 		int selection2 = subreddits.getSelectionModel().getSelectedIndex();
