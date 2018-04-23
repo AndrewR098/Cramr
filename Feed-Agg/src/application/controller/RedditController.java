@@ -132,17 +132,20 @@ public class RedditController implements Initializable{
 		//String feedTitle = feed.getEntries().get(0).getTitle();
 		//oList.add(feedTitle);
 		//subreddits.getItems().add(feedTitle);
-	    List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
-	    List<String> content = new ArrayList<String>(); //make String list for ListView
-	    
-	    feeds.add(feed);
-	    for(int i = 0; i<mess.size(); i++) {
-	    	messages.add(mess.get(i));
-	    	content.add(mess.get(i).getTitle());
-	    	messageContent.add("r/"+name+": "+mess.get(i).getTitle());	
-	    }
-	    
-	    subreddits.getItems().setAll(messageContent);
+		assert feed!=null : "Feed is null";
+		if(feed!=null){
+			List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
+			List<String> content = new ArrayList<String>(); //make String list for ListView
+
+			feeds.add(feed);
+			for(int i = 0; i<mess.size(); i++) {
+				messages.add(mess.get(i));
+				content.add(mess.get(i).getTitle());
+				messageContent.add("r/"+name+": "+mess.get(i).getTitle());	
+			}
+
+			subreddits.getItems().setAll(messageContent);
+		}
 	    
 	}
 	/**

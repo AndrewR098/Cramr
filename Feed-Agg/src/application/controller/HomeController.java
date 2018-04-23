@@ -155,20 +155,23 @@ public class HomeController implements Initializable{
 		//String feedTitle = feed.getEntries().get(0).getTitle();
 		//oList.add(feedTitle);
 		//subreddits.getItems().add(feedTitle);
-	    List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
-	    List<String> content = new ArrayList<String>(); //make String list for ListView
-	    
-	    rFeeds.add(feed);
-	    for(int i = 0; i<mess.size(); i++) {
-	    	rMessages.add(mess.get(i));
-			content.add(mess.get(i).getTitle());
-			rMessageContent.add(mess.get(i).getTitle());
-	    }
-	    
-	    if(!rMessageContent.isEmpty())
-	    	rdtFeed.getItems().setAll(rMessageContent);
-	    else
-	    	rdtFeed.getItems().setAll("No subscriptions");
+		assert feed!=null: "Feed is null";
+		if(feed!=null){
+			List<SyndEntry> mess = feed.getEntries(); //get local entries from feed
+			List<String> content = new ArrayList<String>(); //make String list for ListView
+
+			rFeeds.add(feed);
+			for(int i = 0; i<mess.size(); i++) {
+				rMessages.add(mess.get(i));
+				content.add(mess.get(i).getTitle());
+				rMessageContent.add(mess.get(i).getTitle());
+			}
+
+			if(!rMessageContent.isEmpty())
+				rdtFeed.getItems().setAll(rMessageContent);
+			else
+				rdtFeed.getItems().setAll("No subscriptions");
+		}
 	    
 	}
 	/**
