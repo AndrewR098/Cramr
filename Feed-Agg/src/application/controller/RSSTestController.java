@@ -44,7 +44,7 @@ public class RSSTestController implements Initializable {
 		AsyncTask task = new AsyncTask(){
 			public void doInBackground(){
 				try{
-					feed = new Feed(new URL("http://rss.cnn.com/rss/cnn_topstories.rss"),0);
+					feed = new Feed(new URL("https://www.reddit.com/r/all.rss"),0);
 				}
 				catch(MalformedURLException e){
 					e.printStackTrace();
