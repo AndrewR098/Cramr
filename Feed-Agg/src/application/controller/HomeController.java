@@ -232,6 +232,9 @@ public class HomeController implements Initializable{
 		}
 	}
 	
+	/**
+	 * Show reddit subs
+	 */
 	public void redditSubscriptions(){
 		rFeeds.clear();
 		rMessageContent.clear();
