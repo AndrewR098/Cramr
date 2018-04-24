@@ -116,6 +116,33 @@ public class UserProfile {
 		}
 	}
 	
+	public void removeSubreddit(String subreddit) throws IOException{
+		 String filename = "subreddits" + LoginController.currentUser.user + ".txt";
+	        File inputFile = new File(filename);
+	        File tempFile = new File("myTempFile.txt");
+	 
+	        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+	        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
+	 
+	        String lineToRemove = subreddit;
+	        String currentLine;
+	 
+	        while((currentLine = reader.readLine()) != null) {
+	            // trim newline when comparing with lineToRemove
+	            String trimmedLine = currentLine.trim();
+	            if(!trimmedLine.equals(lineToRemove)) {
+	                writer.write(currentLine + "\n");
+	            }
+	        }
+	        writer.close();
+	        reader.close();
+	       
+	        File temp = new File("temp.txt");
+	        inputFile.renameTo(temp);
+	        tempFile.renameTo(inputFile);
+	        
+	}
+	
 	/*public ArrayList<String> getSubreddits() {
 		return subreddits;
 	}*/
