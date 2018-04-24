@@ -58,7 +58,10 @@ public class UserProfile {
 	
 	public void addSubreddit(String str) {
 		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
-		
+		if (str == null || str.isEmpty() || str.equals("") || str.contains(" ")) {
+			System.out.println("not a valid subreddit entry.");
+			return;
+		}
 		//update file which holds all subreddits for this user
 		BufferedWriter bw = null;
 		FileWriter fw = null;
@@ -117,30 +120,33 @@ public class UserProfile {
 	}
 	
 	public void removeSubreddit(String subreddit) throws IOException{
-		 String filename = "subreddits" + LoginController.currentUser.user + ".txt";
-	        File inputFile = new File(filename);
-	        File tempFile = new File("myTempFile.txt");
-	 
-	        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-	        BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-	 
-	        String lineToRemove = subreddit;
-	        String currentLine;
-	 
-	        while((currentLine = reader.readLine()) != null) {
-	            // trim newline when comparing with lineToRemove
-	            String trimmedLine = currentLine.trim();
-	            if(!trimmedLine.equals(lineToRemove)) {
-	                writer.write(currentLine + "\n");
-	            }
-	        }
-	        writer.close();
-	        reader.close();
-	       
-	        File temp = new File("temp.txt");
-	        inputFile.renameTo(temp);
-	        tempFile.renameTo(inputFile);
-	        
+		if (subreddit == null || subreddit.isEmpty() || subreddit.equals("") || subreddit.contains(" ")) {
+			System.out.println("not a valid subreddit entry.");
+			return;
+		}
+		
+		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
+        File file = new File(filename);
+        ArrayList<String> keep = new ArrayList<String>();
+ 
+        BufferedReader reader = new BufferedReader(new FileReader(file));
+        String currentLine;
+        while((currentLine = reader.readLine()) != null) {
+            String trimmedLine = currentLine.trim();
+            if(!trimmedLine.equals(subreddit)) {
+            	keep.add(trimmedLine);
+            }
+        }
+        reader.close();
+        file.delete();
+        
+        file.createNewFile();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        for (String value : keep) {
+            writer.write(value);
+            writer.newLine();
+        }
+        writer.close();
 	}
 	
 	/*public ArrayList<String> getSubreddits() {
