@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
@@ -36,6 +37,8 @@ public class AddSocialController {
 		PasswordField facebookPasswordText;
 		@FXML
 		Button facebookLoginButton;
+		@FXML
+		Text redditActionText;
 		
 		public void handle(Event event) throws IOException {
 			Button pressedButton = (Button) event.getSource();
@@ -58,21 +61,15 @@ public class AddSocialController {
 					//create a twitter object for the currentUser
 				}
 			}
-			if (pressedButton == facebookLoginButton) {
-				if (facebookEmailText.getText() == null || facebookEmailText.getText() == "") {
-					System.out.println("Email field is blank");
-				} else if (facebookPasswordText.getText() == null || facebookPasswordText.getText() == "") {
-					System.out.println("Password field is blank");
-				} else {
-					//create a facebook object for the currentUser
-				}
-			}
 			if (pressedButton == addSubredditButton) {
 				if (subredditText.getText() == null || subredditText.getText() == "") {
 					System.out.println("subreddit field is blank");
 				} else {
 					//add subreddit to users list of subreddits
 					LoginController.currentUser.addSubreddit(subredditText.getText());
+					System.out.println("subreddit added");
+					subredditText.setText("");
+					redditActionText.setText("Subreddit Added");
 				}
 			}
 			if (pressedButton == removeSubredditButton) {
@@ -80,6 +77,9 @@ public class AddSocialController {
 					System.out.println("subreddit field is blank");
 				} else {
 					LoginController.currentUser.removeSubreddit(subredditText.getText());
+					System.out.println("subreddit removed");
+					subredditText.setText("");
+					redditActionText.setText("Subreddit Removed");
 				}
 			}
 		}
