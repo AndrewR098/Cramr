@@ -23,7 +23,7 @@ import javafx.scene.input.MouseEvent;
 /**
  * Example class for RSS
  * @author Seth Chick
- *
+ * @deprecated
  */
 public class RSSTestController implements Initializable {
 

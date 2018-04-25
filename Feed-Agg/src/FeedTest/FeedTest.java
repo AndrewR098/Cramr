@@ -4,6 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+/**
+ * @deprecated
+ * @author Seth Chick
+ *
+ */
 public class FeedTest {
 
     @Test
