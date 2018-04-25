@@ -9,15 +9,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #e7e7e7;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.FacebookController">
    <children>
-      <Pane layoutX="50.0" layoutY="236.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #3B5998; -fx-border-width: 3;">
-         <children>
-            <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sam Carey: Who wants Chili's for lunch?">
-               <font>
-                  <Font name="Segoe UI Light" size="12.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <Pane layoutX="50.0" layoutY="236.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: #3B5998; -fx-border-width: 3;" />
       <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #3B5998; -fx-border-color: white; -fx-border-width: 3;">
          <children>
             <ImageView fitHeight="56.0" fitWidth="170.0" layoutX="14.0" layoutY="-3.0">
@@ -45,6 +37,11 @@
                   <Font name="Segoe UI Light" size="18.0" />
                </font>
             </Button>
+            <Label layoutX="179.0" layoutY="52.0" text="Coming Soon..." textFill="#757272">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
