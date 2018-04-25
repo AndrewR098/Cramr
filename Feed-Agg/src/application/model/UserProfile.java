@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import application.controller.AddSocialController;
 import application.controller.LoginController;
 /*
  * The UserProfile builds a UserProfile with User/Pass combinations entered by the user
@@ -60,6 +61,7 @@ public class UserProfile {
 		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
 		if (str == null || str.isEmpty() || str.equals("") || str.contains(" ")) {
 			System.out.println("not a valid subreddit entry.");
+			AddSocialController.added = false;
 			return;
 		}
 		//update file which holds all subreddits for this user
@@ -89,17 +91,22 @@ public class UserProfile {
 				if ( scan.nextLine().equals(str) ) {
 					System.out.println("Subreddit already added to this user profile.");
 					dont = false;
+					AddSocialController.added = false;
 					break;
 				} 
 				if ( fileCounter == fileSize ) {
 					bw.write(str);
 					bw.newLine();
 					dont = false;
+					System.out.println("subreddit added");
+					AddSocialController.added = true;
 				}
 			}
 			if( fileCounter == fileSize && dont) {
 				bw.write(str);
 				bw.newLine();
+				System.out.println("subreddit added");
+				AddSocialController.added = true;
 			}
 			scan.close();
 			
@@ -122,17 +129,22 @@ public class UserProfile {
 	public void removeSubreddit(String subreddit) throws IOException{
 		if (subreddit == null || subreddit.isEmpty() || subreddit.equals("") || subreddit.contains(" ")) {
 			System.out.println("not a valid subreddit entry.");
+			AddSocialController.removed = false;
 			return;
 		}
 		
 		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
         File file = new File(filename);
         ArrayList<String> keep = new ArrayList<String>();
+        boolean exists = false;
  
         BufferedReader reader = new BufferedReader(new FileReader(file));
         String currentLine;
         while((currentLine = reader.readLine()) != null) {
             String trimmedLine = currentLine.trim();
+            if(trimmedLine.equals(subreddit)) {
+            	exists = true;
+            }
             if(!trimmedLine.equals(subreddit)) {
             	keep.add(trimmedLine);
             }
@@ -147,6 +159,13 @@ public class UserProfile {
             writer.newLine();
         }
         writer.close();
+        if (!exists) {
+        	System.out.println("subreddit isn't in your subscriptions to remove");
+        	AddSocialController.removed = false;
+        } else {
+        	System.out.println("subreddit removed");
+        	AddSocialController.removed = true;
+        }
 	}
 	
 	/*public ArrayList<String> getSubreddits() {

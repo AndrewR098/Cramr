@@ -39,6 +39,7 @@ public class AddSocialController {
 		Button facebookLoginButton;
 		@FXML
 		Text redditActionText;
+		public static boolean added, removed;
 		
 		public void handle(Event event) throws IOException {
 			Button pressedButton = (Button) event.getSource();
@@ -67,9 +68,12 @@ public class AddSocialController {
 				} else {
 					//add subreddit to users list of subreddits
 					LoginController.currentUser.addSubreddit(subredditText.getText());
-					System.out.println("subreddit added");
 					subredditText.setText("");
-					redditActionText.setText("Subreddit Added");
+					if (added) {
+						redditActionText.setText("Subreddit Added");
+					} else {
+						redditActionText.setText("");
+					}
 				}
 			}
 			if (pressedButton == removeSubredditButton) {
@@ -77,9 +81,12 @@ public class AddSocialController {
 					System.out.println("subreddit field is blank");
 				} else {
 					LoginController.currentUser.removeSubreddit(subredditText.getText());
-					System.out.println("subreddit removed");
 					subredditText.setText("");
-					redditActionText.setText("Subreddit Removed");
+					if (removed) {
+						redditActionText.setText("Subreddit Removed");
+					} else {
+						redditActionText.setText("");
+					}
 				}
 			}
 		}
