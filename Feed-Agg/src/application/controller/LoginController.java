@@ -9,7 +9,10 @@ import javafx.fxml.*;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 /*
@@ -31,6 +34,8 @@ public class LoginController implements EventHandler{
 		//incorrect credentials, needs to do something
 		if(UserProfile.authenticate(userLogin.getText(),userPass.getText()) == null){
 			System.out.println("INCORRECT LOGIN");
+			Alert wrongLoginAlert = new Alert(AlertType.ERROR, "Password or Username is incorrect.", ButtonType.CLOSE);
+			wrongLoginAlert.showAndWait();
 			//here we deal with bad stuff
 		} else {
 			
