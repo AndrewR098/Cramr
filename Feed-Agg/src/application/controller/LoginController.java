@@ -29,6 +29,10 @@ public class LoginController implements EventHandler{
 	
 	public static UserProfile currentUser = null;
 	
+	/**
+	 * Handles login functions. If login is correct, it'll bring you to the homepage.
+	 * If not, it will pop up saying it's incorrect.
+	 */
 	@Override
 	public void handle(Event event) {
 		//incorrect credentials, needs to do something
