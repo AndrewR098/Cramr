@@ -25,6 +25,7 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
 
 public class TwitterController {
@@ -40,14 +41,15 @@ public class TwitterController {
 	private static Twitter usertwitter;
 	private static TwitterFactory tf;
 	private static ResponseList<Status> curTimeline;
+	private static AccessToken userToken;
 	
 	public void initialize(){
-		//THIS WILL NOT DO ANYTHING. I am keeping my keys secret, thanks.
 		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
 		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
-
+		  .setOAuthAccessToken("1644016068-Rk73WdeISOMMYbMLtHVeiyGPyQRapiHlKaXEZzu")
+		  .setOAuthAccessTokenSecret("5IL1cNR0MOLzxwm56vCxTcQ0EudjIztcW9d2uqanDJejw");
 
 
 		this.tf = new TwitterFactory(cb.build());
@@ -94,6 +96,10 @@ public class TwitterController {
 		}
 	}
 	
+	/**
+	 * Not sure how to undo Retweets yet, but we CAN retweet statuses.
+	 * @param event
+	 */
 	public void retweetStatus(ActionEvent event){
 		if (event.getSource().equals(retweet1)){
 			try{
@@ -108,12 +114,20 @@ public class TwitterController {
 		}
 	}
 	
+	
+	/**
+	 * Not sure how to undo likes yet without too many API requests, but we can like it.
+	 * @param event
+	 */
 	public void likeStatus(ActionEvent event){
 		if (event.getSource().equals(like1)){
-			if (!curTimeLine.get(0).isFavorited){
+			try{
+			if (!curTimeline.get(0).isFavorited()){
 				usertwitter.createFavorite(curTimeline.get(0).getId());
 			} else {
 				usertwitter.destroyFavorite(curTimeline.get(0).getId());
+			} } catch (TwitterException e){
+				e.printStackTrace();
 			}
 		}
 	}
@@ -140,5 +154,15 @@ public class TwitterController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
+	}
+
+
+	public static AccessToken getUserToken() {
+		return userToken;
+	}
+
+
+	public static void setUserToken(AccessToken userToken) {
+		TwitterController.userToken = userToken;
 	}
 }
