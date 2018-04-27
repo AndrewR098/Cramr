@@ -1,8 +1,11 @@
 package application.controller;
 
+
+
 import application.model.TweetView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -26,13 +30,41 @@ import twitter4j.conf.ConfigurationBuilder;
 public class TwitterController {
 	@FXML Button homeButton;
 	@FXML TextArea userStatus;
+	@FXML Label tooLong;
 	@FXML TableView<TweetView> timelineView;
 	@FXML TableColumn<TweetView, Integer> retweetColumn;
 	@FXML TableColumn<TweetView, Integer> likeColumn; 
 	@FXML TableColumn<TweetView, String> userColumn;
 	@FXML TableColumn<TweetView, String> tweetColumn;
+	@FXML Button retweet1, like1;
 	private static Twitter usertwitter;
 	private static TwitterFactory tf;
+	private static ResponseList<Status> curTimeline;
+	
+	public void initialize(){
+		//THIS WILL NOT DO ANYTHING. I am keeping my keys secret, thanks.
+		ConfigurationBuilder cb = new ConfigurationBuilder();
+		cb.setDebugEnabled(true)
+		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
+		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
+
+
+
+		this.tf = new TwitterFactory(cb.build());
+		this.usertwitter = tf.getInstance();
+		try {
+			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
+			this.curTimeline = userHome;
+			retweetColumn.setCellValueFactory(new PropertyValueFactory<TweetView, Integer>("retweetCount"));
+			likeColumn.setCellValueFactory(new PropertyValueFactory<TweetView, Integer>("favoriteCount"));
+			tweetColumn.setCellValueFactory(new PropertyValueFactory<TweetView, String>("text"));
+			userColumn.setCellValueFactory(new PropertyValueFactory<TweetView, String>("user"));
+			timelineView.setItems(getTweets(userHome));
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+	}
 	
 	
 	public void handle(Event event) {
@@ -49,14 +81,41 @@ public class TwitterController {
 	
 	public void postTweet(){
 		String toPost = userStatus.getText();
-		userStatus.setText("");
-		try {
-			Status status = usertwitter.updateStatus(toPost);
-		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(toPost.length() > 240){
+			tooLong.setVisible(true);
+		} else{
+			userStatus.setText("");
+			tooLong.setVisible(false);
+			try {
+				Status status = usertwitter.updateStatus(toPost);
+			} catch (TwitterException e) {
+				e.printStackTrace();
+			}
 		}
-		// Should assume the user is authenticated(?)
+	}
+	
+	public void retweetStatus(ActionEvent event){
+		if (event.getSource().equals(retweet1)){
+			try{
+			if (!curTimeline.get(0).isRetweetedByMe()){
+					usertwitter.retweetStatus(curTimeline.get(0).getId());
+			} else{
+					usertwitter.destroyStatus(curTimeline.get(0).getCurrentUserRetweetId());
+			}
+			} catch(TwitterException e){
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public void likeStatus(ActionEvent event){
+		if (event.getSource().equals(like1)){
+			if (!curTimeLine.get(0).isFavorited){
+				usertwitter.createFavorite(curTimeline.get(0).getId());
+			} else {
+				usertwitter.destroyFavorite(curTimeline.get(0).getId());
+			}
+		}
 	}
 	
 	public ObservableList<TweetView> getTweets(ResponseList<Status> userHome){
@@ -69,16 +128,7 @@ public class TwitterController {
 		return tweets;
 	}
 	
-	public void initialize(){
-		//THIS WILL NOT DO ANYTHING. I am keeping my keys secret, thanks.
-		ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true)
-		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
-		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
-
-
-		this.tf = new TwitterFactory(cb.build());
-		this.usertwitter = tf.getInstance();
+	public void refresh(){
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
 			retweetColumn.setCellValueFactory(new PropertyValueFactory<TweetView, Integer>("retweetCount"));
