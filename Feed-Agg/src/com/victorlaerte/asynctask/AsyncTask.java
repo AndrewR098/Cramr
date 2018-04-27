@@ -11,14 +11,36 @@ public abstract class AsyncTask<P> {
 
 	private boolean daemon = true;
 
+	/**
+	 * Runs on main thread before background thread starts
+	 */
 	public abstract void onPreExecute();
 
+	/**
+	 * Runs on background thread. This executes after
+	 * {@linkplain #onPreExecute()} and before
+	 * {@linkplain #onPostExecute()}.
+	 */
 	public abstract void doInBackground();
 
+	/**
+	 * Runs after background thread ends on the 
+	 * main thread
+	 */
 	public abstract void onPostExecute();
 
-	public abstract void progressCallback(Object... params);
+	/**
+	 * Use this to update anything on the main thread as
+	 * the background thread runs (this is a callback, DO NOT
+	 * CALL THIS DIRECTLY)
+	 * @param params parameters to pass, can be anything you want.
+	 */
+	public abstract void progressCallback(P... params);
 
+	/**
+	 * Call this to publish progress to the main thread
+	 * @param params parameters to pass, can be anything you want
+	 */
 	public void publishProgress(final P... params) {
 
 		Platform.runLater(new Runnable() {
@@ -49,6 +71,9 @@ public abstract class AsyncTask<P> {
 		}
 	});
 
+	/**
+	 * Start the Async Task
+	 */
 	public void execute() {
 
 		Platform.runLater(new Runnable() {
@@ -64,11 +89,20 @@ public abstract class AsyncTask<P> {
 		});
 	}
 
+	/**
+	 * Set if this should be a daemon thread or not
+	 * @param daemon is daemon?
+	 * @see {@linkplain Thread#setDaemon(boolean)}
+	 */
 	public void setDaemon(boolean daemon) {
 
 		this.daemon = daemon;
 	}
 
+	/**
+	 * Interrupt the thread.
+	 * @see {@linkplain Thread#interrupt()}
+	 */
 	public void interrupt() {
 
 		this.backGroundThread.interrupt();
