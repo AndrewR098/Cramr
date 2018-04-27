@@ -6,6 +6,7 @@ import javafx.application.Platform;
  * This isn't our code, credit goes to the guy marked by the data below.
  * @see <a href="https://github.com/victorlaerte/javafx-asynctask">https://github.com/victorlaerte/javafx-asynctask</a>
  * @author Victor Oliveira
+ * @param <P> The type of progress parameter
  */
 public abstract class AsyncTask<P> {
 
