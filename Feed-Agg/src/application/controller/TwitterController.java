@@ -1,6 +1,8 @@
 package application.controller;
 
-import application.model.Item;
+import application.model.TweetView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +11,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import twitter4j.ResponseList;
@@ -22,10 +26,11 @@ import twitter4j.conf.ConfigurationBuilder;
 public class TwitterController {
 	@FXML Button homeButton;
 	@FXML TextArea userStatus;
-	@FXML TableView<Status> timelineView;
-//	@FXML TableColumn<Status, Double> Column; 
-	@FXML TableColumn<Status, String> userColumn;
-	@FXML TableColumn<Status, String> tweetColumn;
+	@FXML TableView<TweetView> timelineView;
+	@FXML TableColumn<TweetView, Integer> retweetColumn;
+	@FXML TableColumn<TweetView, Integer> likeColumn; 
+	@FXML TableColumn<TweetView, String> userColumn;
+	@FXML TableColumn<TweetView, String> tweetColumn;
 	private static Twitter usertwitter;
 	private static TwitterFactory tf;
 	
@@ -54,21 +59,36 @@ public class TwitterController {
 		// Should assume the user is authenticated(?)
 	}
 	
+	public ObservableList<TweetView> getTweets(ResponseList<Status> userHome){
+		ObservableList<TweetView> tweets = FXCollections.observableArrayList();
+		TweetView toAdd;
+		for(Status value : userHome){
+			toAdd = new TweetView(value.getText(), value.getUser().getScreenName(), value.getRetweetCount(), value.getFavoriteCount());
+			tweets.add(toAdd);
+		}
+		return tweets;
+	}
+	
 	public void initialize(){
 		//THIS WILL NOT DO ANYTHING. I am keeping my keys secret, thanks.
-/*		ConfigurationBuilder cb = new ConfigurationBuilder();
+		ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
 		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
+
 
 		this.tf = new TwitterFactory(cb.build());
 		this.usertwitter = tf.getInstance();
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
-			
+			retweetColumn.setCellValueFactory(new PropertyValueFactory<TweetView, Integer>("retweetCount"));
+			likeColumn.setCellValueFactory(new PropertyValueFactory<TweetView, Integer>("favoriteCount"));
+			tweetColumn.setCellValueFactory(new PropertyValueFactory<TweetView, String>("text"));
+			userColumn.setCellValueFactory(new PropertyValueFactory<TweetView, String>("user"));
+			timelineView.setItems(getTweets(userHome));
 		} catch (TwitterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}  */
+		}  
 	}
 }
