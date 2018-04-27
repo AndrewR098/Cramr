@@ -13,10 +13,10 @@
          <children>
             <TableView fx:id="timelineView" layoutX="3.0" layoutY="3.0" prefHeight="442.0" prefWidth="593.0">
               <columns>
-                <TableColumn fx:id="userColumn" prefWidth="75.0" text="User" />
-                <TableColumn fx:id="tweetColumn" prefWidth="350.0" text="Tweet" />
-                  <TableColumn prefWidth="85.0" text="Retweets" />
-                  <TableColumn prefWidth="85.0" text="Likes" />
+                <TableColumn fx:id="userColumn" editable="false" prefWidth="75.0" resizable="false" text="User" />
+                <TableColumn fx:id="tweetColumn" editable="false" prefWidth="350.0" resizable="false" text="Tweet" />
+                  <TableColumn fx:id="retweetColumn" editable="false" prefWidth="85.0" resizable="false" text="Retweets" />
+                  <TableColumn fx:id="likeColumn" editable="false" prefWidth="85.0" resizable="false" text="Likes" />
               </columns>
             </TableView>
          </children>
