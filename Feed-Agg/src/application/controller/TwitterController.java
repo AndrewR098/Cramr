@@ -49,16 +49,6 @@ public class TwitterController {
 	private static AccessToken userToken;
 	
 	public void initialize(){
-	/*	ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true)
-		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
-		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
-		  .setOAuthAccessToken("1644016068-Rk73WdeISOMMYbMLtHVeiyGPyQRapiHlKaXEZzu")
-		  .setOAuthAccessTokenSecret("5IL1cNR0MOLzxwm56vCxTcQ0EudjIztcW9d2uqanDJejw");
-
-
-		this.tf = new TwitterFactory(cb.build());
-		this.usertwitter = tf.getInstance(); */
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
 			this.curTimeline = userHome;
