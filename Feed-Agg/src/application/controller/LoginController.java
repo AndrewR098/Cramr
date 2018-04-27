@@ -45,7 +45,6 @@ public class LoginController implements EventHandler{
 			System.out.println("INCORRECT LOGIN");
 			Alert wrongLoginAlert = new Alert(AlertType.ERROR, "Password or Username is incorrect.", ButtonType.CLOSE);
 			wrongLoginAlert.showAndWait();
-			//here we deal with bad stuff
 		} else {
 			
 			currentUser = new UserProfile( userLogin.getText(),userPass.getText() );

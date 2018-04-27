@@ -62,7 +62,6 @@ public class AddSocialController {
 		 */
 		public void initialize(){
 			updateHome = false;
-			System.out.println("update home is " + updateHome);
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
 			  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")

@@ -31,7 +31,7 @@
                               <Font name="Segoe UI" size="12.0" />
                            </font>
                         </Label>
-                        <Button fx:id="twitterSubmit" layoutX="419.0" layoutY="256.0" mnemonicParsing="false" onAction="#finishTwitterAuth" style="-fx-background-color: #353839;" text="Submit" textFill="WHITE">
+                        <Button fx:id="twitterSubmit" layoutX="419.0" layoutY="256.0" mnemonicParsing="false" onAction="#finishTwitterAuth" style="-fx-background-color: #353839;" text="Submit" textFill="#fbe870">
                            <font>
                               <Font name="Segoe UI Light" size="11.0" />
                            </font>
@@ -56,12 +56,12 @@
                            </image>
                         </ImageView>
                         <TextField fx:id="subredditText" layoutX="242.0" layoutY="180.0" onAction="#handle" prefHeight="22.0" prefWidth="221.0" />
-                        <Button fx:id="addSubredditButton" layoutX="242.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Add subreddit" textFill="WHITE">
+                        <Button fx:id="addSubredditButton" layoutX="242.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Add subreddit" textFill="#fbe870">
                            <font>
                               <Font name="Segoe UI Light" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeSubredditButton" layoutX="355.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Remove subreddit" textFill="WHITE">
+                        <Button fx:id="removeSubredditButton" layoutX="355.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Remove subreddit" textFill="#fbe870">
                            <font>
                               <Font name="Segoe UI Light" size="12.0" />
                            </font>
@@ -95,7 +95,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="253.0" layoutY="78.0" text="Add Network" textFill="WHITE">
+      <Label layoutX="253.0" layoutY="78.0" text="Add Network" textFill="#fbe870">
          <font>
             <Font name="Segoe UI Light" size="36.0" />
          </font>
@@ -115,7 +115,7 @@
             <Image url="@resources/twitter.png" />
          </image>
       </ImageView>
-      <Button fx:id="homeButton" layoutX="608.0" layoutY="32.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
+      <Button fx:id="homeButton" layoutX="608.0" layoutY="32.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="#fbe870">
          <font>
             <Font name="Segoe UI Bold" size="14.0" />
          </font></Button>

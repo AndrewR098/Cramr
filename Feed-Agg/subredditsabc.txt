@@ -1,3 +1,2 @@
-taco
-windowsphone
-bigmac
+tacos
+zelda

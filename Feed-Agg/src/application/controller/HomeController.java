@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import com.rometools.rome.feed.synd.SyndEntry;
 import com.rometools.rome.io.FeedException;
 import com.victorlaerte.asynctask.AsyncTask;
@@ -62,8 +64,9 @@ public class HomeController implements Initializable{
 	@FXML
 	ListView<String> twFeed;
 	ObservableList<String> hpTweets=  FXCollections.observableArrayList();
+	
 	@FXML
-	Button refreshTwitter,newTweet;
+	Button refreshTwitter;
 	/////////////////REDDIT//////////////////////
 	@FXML
 	ListView<String> rdtFeed;
@@ -115,7 +118,33 @@ public class HomeController implements Initializable{
 				e.printStackTrace();
 			}
 
-		}  else if(event.getSource() == addSocialButton) {
+		}  else if(event.getSource()== refreshTwitter){
+			if(TwitterController.usertwitter ==null){
+				JOptionPane.showMessageDialog(null, "Nothing to refresh; add an Account!");
+				return;
+			}else if(AddSocialController.updateHome == false){
+				JOptionPane.showMessageDialog(null, "Nothing to refresh; add an Account!");
+				return;
+			} else if(AddSocialController.updateHome == true){
+				ResponseList<Status> userHome;
+				try {
+					userHome = TwitterController.usertwitter.getHomeTimeline();
+					TwitterController.curTimeline = userHome;
+					
+					for(Status value: userHome){
+						String str="";
+						str = value.getUser().getScreenName() +"\n\n"+value.getText();
+						hpTweets.add(str);
+						twFeed.setItems(hpTweets);
+					}
+				} catch (TwitterException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				
+			}
+		}else if(event.getSource() == addSocialButton) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("/AddSocialAccount.fxml"));
 				Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -152,7 +181,9 @@ public class HomeController implements Initializable{
 		twitterButton.setDisable(disTwitter);
 		try {
 			if(TwitterController.usertwitter==null){
-				hpTweets.add("No Twitter account associated with Cramr...");
+				hpTweets.add("No Twitter Account associated with Cramr...");
+				hpTweets.add("\n");
+				hpTweets.add("To enable Twitter, add your Account");
 				twFeed.setItems(hpTweets);
 				return;
 			}

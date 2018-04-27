@@ -19,41 +19,40 @@
       </ToolBar>
       <ToolBar layoutX="323.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
          <items>
-            <Button fx:id="refreshTweet" mnemonicParsing="false" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
-            <Button fx:id="newTweet" mnemonicParsing="false" style="-fx-background-color: grey;" text="New Tweet" textFill="#fbe870" />
+            <Button fx:id="refreshTwitter" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: grey;" text="Refresh" textFill="#fbe870" />
          </items>
       </ToolBar>
-      <Pane prefHeight="700.0" prefWidth="45.0" style="-fx-background-color: #FBE870;">
+      <Pane prefHeight="700.0" prefWidth="42.0" style="-fx-background-color: #FBE870;">
          <children>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="30.0">
-               <image>
-                  <Image url="@resources/facebook-outline-512.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="3.0" layoutY="86.0">
-               <image>
-                  <Image url="@resources/circletwitter.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="6.0" layoutY="148.0">
-               <image>
-                  <Image url="@resources/reddit-outline.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="7.0" layoutY="179.0">
+            <ImageView fitHeight="60.0" fitWidth="33.0" layoutX="5.0" layoutY="197.0">
                <image>
                   <Image url="@resources/Location_arithmetic_horizontal.svg.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="5.0" layoutY="234.0">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="254.0">
                <image>
                   <Image url="@resources/plusSign.png" />
                </image>
             </ImageView>
-            <Button fx:id="facebookButton" layoutX="7.0" layoutY="29.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="twitterButton" disable="true" layoutX="6.0" layoutY="90.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="234.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
-            <Button fx:id="redditButton" layoutX="7.0" layoutY="148.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="6.0" layoutY="48.0">
+               <image>
+                  <Image url="@resources/newFB.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="2.0" layoutY="104.0">
+               <image>
+                  <Image url="@resources/newTw.gif" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="4.0" layoutY="165.0">
+               <image>
+                  <Image url="@resources/newRed.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="facebookButton" layoutX="5.0" layoutY="45.0" mnemonicParsing="false" onAction="#handle" prefHeight="34.0" prefWidth="34.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="redditButton" layoutX="4.0" layoutY="165.0" mnemonicParsing="false" onAction="#handle" prefHeight="33.0" prefWidth="33.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="twitterButton" disable="true" layoutX="5.0" layoutY="105.0" mnemonicParsing="false" onAction="#handle" prefHeight="34.0" prefWidth="31.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="addSocialButton" layoutX="5.0" layoutY="252.0" mnemonicParsing="false" onAction="#handle" prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: transparent;" />
          </children></Pane>
       <ToolBar layoutX="582.0" layoutY="639.0" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: lightgrey;">
          <items>
