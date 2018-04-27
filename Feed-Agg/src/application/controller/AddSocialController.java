@@ -146,6 +146,7 @@ public class AddSocialController {
 			TwitterController.setTf(temp);
 			TwitterController.setUsertwitter(temp.getInstance());
 			try{ TwitterController.setCurTimeline(TwitterController.getUsertwitter().getHomeTimeline()); } catch (TwitterException e) { e.printStackTrace(); }
+			HomeController.disTwitter = false;
 		}
 	}
 

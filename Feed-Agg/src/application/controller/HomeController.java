@@ -66,6 +66,7 @@ public class HomeController implements Initializable{
 	ArrayList<Feed> rFeeds;
 	List<SyndEntry> rMessages;
 	ArrayList<String> rMessageContent;
+	public static boolean disTwitter = true;
 	
 	////////////////REDDIT: END//////////////////
 	
@@ -141,6 +142,7 @@ public class HomeController implements Initializable{
 		// TODO Auto-generated method stub
 		//Reddit/////////////////////////////////////
 		refreshReddit();
+		twitterButton.setDisable(disTwitter);
 		//////////////////REDDIT: END///////////////////////////
 		
 	}
