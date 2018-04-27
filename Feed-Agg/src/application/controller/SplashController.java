@@ -15,6 +15,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+/**
+ * Display the splash page.
+ * If the user selects LOGIN, take them to the login page.
+ * If the user selects CREATE NEW, take them to the create new page.
+ * 
+ */
 public class SplashController implements EventHandler {
 	@FXML
 	Button signUpButton;

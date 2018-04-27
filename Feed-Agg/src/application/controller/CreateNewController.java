@@ -12,6 +12,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * Create new Cramr accounts.
+ * @author Casey Hammond
+ *
+ */
 public class CreateNewController {
 	
 	@FXML 
@@ -25,6 +30,10 @@ public class CreateNewController {
 	@FXML
 	Button buttonCreateNew;
 	
+	/**
+	 * If the user enters information correctly, add it to the users.txt file for later logins.
+	 * @param event
+	 */
 	public void handle(Event event) {
 		// if the passwords match
 		if ( fieldPassword.getText().equals( fieldConfirmPassword.getText() ) ) {

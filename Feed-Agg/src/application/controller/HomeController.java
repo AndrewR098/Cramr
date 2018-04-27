@@ -142,8 +142,9 @@ public class HomeController implements Initializable{
 
 	}
 	
-	
-
+	/**
+	 * If the user has setup reddit and/or twitter feeds, display them to the user.
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub

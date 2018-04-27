@@ -14,9 +14,11 @@ public class UserTwitter {
 		this.twitter = new TwitterFactory().getInstance();
 	}
 
-	/* This needs to be reworked around FXML, primarily getting the pin from a text field. Controller will need its own authentication method to handle the inbetween.
-	   This method may need to be overall trashed/overhauled as a result. 
-	*/
+	/**
+	 *  This needs to be reworked around FXML, primarily getting the pin from a text field. Controller will need its own authentication method to handle the in between.
+	 *  This method may need to be overall trashed/overhauled as a result. 
+	 */
+	
 	public void twitterAuthentication() {
 		//TODO: Figure out how we can store keys
 /*		try {

@@ -34,7 +34,7 @@ import javafx.stage.Stage;
 /**
 * Handles the Reddit specific UI.
 * @author Seth Chick
-* @author Casey
+* @author Casey Hammond
 **/
 public class RedditController implements Initializable{
 	

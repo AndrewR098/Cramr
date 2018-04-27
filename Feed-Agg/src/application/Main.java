@@ -44,27 +44,11 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * Launch the program.
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 }
-
-/*class Launcher extends Application{
-	@Override
-	public void start(Stage primaryStage) {
-		try {
-		    // Load the FXML file for the game board
-			Parent root = FXMLLoader.load(getClass().getResource("Splash.fxml"));
-			
-			// Set the scene onto the stage
-			primaryStage.setScene(new Scene(root, 700, 700));
-			
-			// Display the board to the user
-			primaryStage.show();
-			Main.stage=primaryStage;
-						
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-}*/

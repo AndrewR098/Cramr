@@ -24,7 +24,11 @@ import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
 
-
+/**
+ * Add social feeds to the user profile.
+ * @author Casey Hammond
+ * 
+ */
 public class AddSocialController {
 
 		@FXML 
@@ -52,6 +56,9 @@ public class AddSocialController {
 		public static boolean added, removed;
 		public static RequestToken requestToken;
 		
+		/**
+		 * Twitter login setup
+		 */
 		public void initialize(){
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
@@ -71,6 +78,14 @@ public class AddSocialController {
 			
 		}
 		
+		/**
+		 * If user clicks HOME, go to the home page.
+		 * If user clicks ADD REDDIT, add subreddit to the user profile.
+		 * If user clicks REMOVE REDDIT, remove the subreddit from the user profile.
+		 * 
+		 * @param event
+		 * @throws IOException
+		 */
 		public void handle(Event event) throws IOException {
 			Button pressedButton = (Button) event.getSource();
 			if (pressedButton == homeButton) {
@@ -112,6 +127,9 @@ public class AddSocialController {
 			}
 		}
 		
+		/**
+		 * Authenticate twitter logins.
+		 */
 		public void finishTwitterAuth(){
 			String pin = pinField.getText();
 			try {
