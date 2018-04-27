@@ -33,7 +33,11 @@ import javafx.stage.Stage;
  * @author Melina KleinΩxcv d
  * @author Seth Chick
  * 
- * 
+ * This is the landing page; it will display RSS feeds within columns for all feeds like Flickr or any
+ * other feeds we can stream now
+ * The user can choose to filter feeds based on site, by clicking on an icon.
+ * When a user clicks an icon, we will build a new fxml page that is identical to the homepage.fxml except
+ * it will only display RSS for the selected site
  * 
 
  */
