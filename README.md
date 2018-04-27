@@ -1,11 +1,14 @@
 # Feed-Aggregator-Cramr
 Welcome to Cramr. This application puts your favorite social media platforms all in one place to look at.
 
-# Dummy Login
+# Dummy Login 
 - Username: abc
 - Password: 123
-
 Or you can create your own.
+-----------------------------------------------------
+# Dummy twitter login to show authentication code:
+- Username: cramrtest
+- Password: Cramrtest1
 -----------------------------------------------------
 # Compiling Instructions in Eclipse (Maven Required)
 1. Right click on the project
@@ -26,3 +29,4 @@ Or you can create your own.
 --------------------------------------------------------
 # Bugs/Bugged Features
 - TWITTER - Retweeting and liking works. However, undoing retweets and likes is broken.
+- TWITTER - Likes on retweeted tweets on your timeline always show as 0.
