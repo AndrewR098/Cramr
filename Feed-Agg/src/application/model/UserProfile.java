@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 import application.controller.AddSocialController;
 import application.controller.LoginController;
-/*
+/**
  * The UserProfile builds a UserProfile with User/Pass combinations entered by the user
  * present in users.txt
  * 
  * @author Samuel Carey (ial812)
+ * @author Casey Hammond
  */
 public class UserProfile {
 
@@ -17,13 +18,7 @@ public class UserProfile {
 	private String pass;
 	static File userFile = new File("users.txt");
 	
-	//TESTING
-	//private ArrayList<String> subreddits = new ArrayList<String>();
-	// NO SUBREDDITS OBJECT, JUST A .TXT FILE FOR THE GIVEN USER
-	// TODO: add twitter object
-	// TODO: add facebook object
-	
-	/*
+	/**
 	 * Constructor
 	 */
 	public UserProfile(String a, String b){
@@ -57,6 +52,10 @@ public class UserProfile {
 		return null;
 	}
 	
+	/**
+	 * Add Reddit feeds to the current user's profile.
+	 * @param str
+	 */
 	public void addSubreddit(String str) {
 		String filename = "subreddits" + LoginController.currentUser.user + ".txt";
 		if (str == null || str.isEmpty() || str.equals("") || str.contains(" ")) {
@@ -126,6 +125,10 @@ public class UserProfile {
 		}
 	}
 	
+	/**
+	 * Remove Reddit feeds to the current user's profile.
+	 * @param subreddit
+	 */
 	public void removeSubreddit(String subreddit) throws IOException{
 		if (subreddit == null || subreddit.isEmpty() || subreddit.equals("") || subreddit.contains(" ")) {
 			System.out.println("not a valid subreddit entry.");
@@ -167,10 +170,6 @@ public class UserProfile {
         	AddSocialController.removed = true;
         }
 	}
-	
-	/*public ArrayList<String> getSubreddits() {
-		return subreddits;
-	}*/
 	
 	public String getUser() {
 		return user;

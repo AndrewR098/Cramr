@@ -29,7 +29,6 @@ import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
 /**
  * The twitter controller handles all interactions between the user and the twitter model. It utilizes the Twitter4J library to interact with Twitter's API effectively and easily.
- * It s
  * @author awa794
  *
  */
@@ -48,6 +47,9 @@ public class TwitterController {
 	static ResponseList<Status> curTimeline;
 	private static AccessToken userToken;
 	
+	/**
+	 * Setup the twitter page with all the info needed to display to the user.
+	 */
 	public void initialize(){
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
@@ -63,7 +65,10 @@ public class TwitterController {
 		}  
 	}
 	
-	
+	/**
+	 * If user clicks HOME, take them to the home page.
+	 * @param event
+	 */
 	public void handle(Event event) {
 			try {
 				Parent root = FXMLLoader.load(getClass().getResource("/Homepage.fxml"));
@@ -76,6 +81,9 @@ public class TwitterController {
 		
 	}
 	
+	/**
+	 * If user clicks TWEET, post whatever they have typed to twitter.
+	 */
 	public void postTweet(){
 		String toPost = userStatus.getText();
 		if(toPost.length() > 240){
@@ -127,6 +135,11 @@ public class TwitterController {
 		}
 	}
 	
+	/**
+	 * Get tweets from the users feed.
+	 * @param userHome
+	 * @return
+	 */
 	public ObservableList<TweetView> getTweets(ResponseList<Status> userHome){
 		ObservableList<TweetView> tweets = FXCollections.observableArrayList();
 		TweetView toAdd;
@@ -137,6 +150,9 @@ public class TwitterController {
 		return tweets;
 	}
 	
+	/**
+	 * Refresh the page to show new tweets.
+	 */
 	public void refresh(){
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.

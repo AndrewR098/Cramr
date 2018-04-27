@@ -1,5 +1,9 @@
 package application.model;
 
+/**
+ * The model for specific tweets.
+ *
+ */
 public class TweetView {
 
 	private String text, user;

@@ -21,6 +21,11 @@ import javafx.scene.control.TextField;
  */
 import javafx.stage.Stage;
 
+/**
+ * Manage all Cramr logins from the user.
+ * @author Casey Hammond
+ *
+ */
 public class LoginController implements EventHandler{
 	
 	@FXML TextField userLogin = new TextField();
