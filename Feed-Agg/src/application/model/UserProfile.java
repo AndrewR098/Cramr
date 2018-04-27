@@ -30,7 +30,7 @@ public class UserProfile {
 		this.user = a;
 		this.pass = b;
 	}
-	/*
+	/**
 	 * @param username String from userLogin 
 	 * @param password String from userPass
 	 * 

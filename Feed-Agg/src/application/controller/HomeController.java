@@ -83,7 +83,10 @@ public class HomeController implements Initializable{
 	public HomeController() {
 		super();
 	}
-	
+	/**
+	 * Handles button presses.
+	 * @param event
+	 */
 	public void handle(Event event) {
 		if(event.getSource() == facebookButton) {
 			try {

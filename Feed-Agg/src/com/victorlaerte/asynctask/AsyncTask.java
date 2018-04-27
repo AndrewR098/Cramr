@@ -4,7 +4,7 @@ import javafx.application.Platform;
 
 /**
  * This isn't our code, credit goes to the guy marked by the data below.
- * {@linkplain https://github.com/victorlaerte/javafx-asynctask}
+ * @see <a href="https://github.com/victorlaerte/javafx-asynctask">https://github.com/victorlaerte/javafx-asynctask</a>
  * @author Victor Oliveira
  */
 public abstract class AsyncTask<P> {
