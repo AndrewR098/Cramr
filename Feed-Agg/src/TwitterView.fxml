@@ -21,7 +21,7 @@
             </TableView>
          </children>
       </Pane>
-      <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #00aced; -fx-border-color: white; -fx-border-width: 3;">
+      <Pane prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #00aced; -fx-border-color: #00aced; -fx-border-width: 3;">
          <children>
             <ImageView fitHeight="29.0" fitWidth="148.0" layoutX="14.0" layoutY="11.0">
                <image>

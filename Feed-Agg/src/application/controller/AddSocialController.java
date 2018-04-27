@@ -2,6 +2,9 @@ package application.controller;
 
 import application.controller.LoginController;
 import java.io.*;
+
+import javax.swing.JOptionPane;
+
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,9 +32,7 @@ public class AddSocialController {
 		@FXML
 		TextField twitterUsernameText, pinField;
 		@FXML
-		PasswordField twitterPasswordText;
-		@FXML
-		Button twitterLoginButton;
+		Button twitterSubmit;
 		@FXML
 		TextField subredditText;
 		@FXML
@@ -82,15 +83,6 @@ public class AddSocialController {
 					e.printStackTrace();
 				}
 			}
-			if (pressedButton == twitterLoginButton) {
-				if (twitterUsernameText.getText() == null || twitterUsernameText.getText() == "") {
-					System.out.println("Username field is blank");
-				} else if (twitterPasswordText.getText() == null || twitterPasswordText.getText() == "") {
-					System.out.println("Password field is blank");
-				} else {
-					//create a twitter object for the currentUser
-				}
-			}
 			if (pressedButton == addSubredditButton) {
 				if (subredditText.getText() == null || subredditText.getText() == "") {
 					System.out.println("subreddit field is blank");
@@ -124,8 +116,10 @@ public class AddSocialController {
 			String pin = pinField.getText();
 			try {
                 if (pin.length() > 0) {
+    				JOptionPane.showMessageDialog(null, "This Twitter Account has been added to your feeds");
                     TwitterController.setUserToken(TwitterController.getUsertwitter().getOAuthAccessToken(requestToken, pin));
                 } else {
+                	JOptionPane.showMessageDialog(null, "This Twitter Account has been added to your feeds");
                 	TwitterController.setUserToken(TwitterController.getUsertwitter().getOAuthAccessToken(requestToken));
                 }
             } catch (TwitterException te) {

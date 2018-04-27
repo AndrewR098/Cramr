@@ -152,8 +152,11 @@ public class HomeController implements Initializable{
 		twitterButton.setDisable(disTwitter);
 		try {
 			if(TwitterController.usertwitter==null){
+				hpTweets.add("No Twitter account associated with Cramr...\nSign in to see your feed!");
+				twFeed.setItems(hpTweets);
 				return;
 			}
+			
 			ResponseList<Status> userHome = TwitterController.usertwitter.getHomeTimeline();
 
 			TwitterController.curTimeline = userHome;
@@ -161,7 +164,7 @@ public class HomeController implements Initializable{
 			
 			for(Status value: userHome){
 				String str="";
-				str = value.getUser().getScreenName() +"\n"+value.getText();
+				str = value.getUser().getScreenName() +"\n\n"+value.getText();
 				hpTweets.add(str);
 				twFeed.setItems(hpTweets);
 			}

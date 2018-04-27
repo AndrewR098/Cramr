@@ -9,55 +9,59 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color: #353839;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AddSocialController">
    <children>
-      <TabPane layoutY="318.0" prefHeight="382.0" prefWidth="700.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutY="200.0" prefHeight="500.0" prefWidth="700.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Twitter">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="700.0">
+               <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="376.0" prefWidth="700.0" style="-fx-background-color: #00aced;">
                      <children>
-                        <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="317.0" layoutY="89.0">
+                        <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="317.0" layoutY="121.0">
                            <image>
                               <Image url="@resources/twitter.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="186.0" layoutY="120.0" text="Login through Twitter website with the following link:" textFill="WHITE">
+                        <Label layoutX="186.0" layoutY="184.0" text="Login through Twitter website with the following link:" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="pinField" layoutX="283.0" layoutY="197.0" />
-                        <Label layoutX="197.0" layoutY="201.0" text="Enter Pin Here" textFill="WHITE">
+                        <TextField fx:id="pinField" layoutX="273.0" layoutY="257.0" />
+                        <Label layoutX="242.0" layoutY="262.0" text="PIN:" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI" size="12.0" />
                            </font>
                         </Label>
-                        <Button fx:id="twitterSubmit" layoutX="440.0" layoutY="197.0" mnemonicParsing="false" onAction="#finishTwitterAuth" text="Submit" />
-                        <TextField fx:id="urlTwitter" editable="false" layoutX="123.0" layoutY="166.0" prefHeight="22.0" prefWidth="467.0" />
+                        <Button fx:id="twitterSubmit" layoutX="419.0" layoutY="256.0" mnemonicParsing="false" onAction="#finishTwitterAuth" style="-fx-background-color: #353839;" text="Submit" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Light" size="11.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="urlTwitter" editable="false" layoutX="123.0" layoutY="216.0" prefHeight="22.0" prefWidth="467.0" />
                      </children>
                   </AnchorPane>
-            </content>
+               </content>
           </Tab>
           <Tab text="Reddit">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: ff4500;">
                      <children>
-                        <Label layoutX="102.0" layoutY="113.0" text="Subreddit: (all lowercase, no spaces)  r/" textFill="WHITE">
+                        <Label layoutX="217.0" layoutY="178.0" text="r/" textFill="WHITE">
                            <font>
-                              <Font name="Segoe UI Light" size="12.0" />
+                              <Font name="Segoe UI Bold" size="18.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="326.0" layoutY="63.0">
+                        <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="308.0" layoutY="112.0">
                            <image>
                               <Image url="@resources/reddit-logo-white.png" />
                            </image>
                         </ImageView>
-                        <TextField fx:id="subredditText" layoutX="298.0" layoutY="110.0" onAction="#handle" />
-                        <Button fx:id="addSubredditButton" layoutX="321.0" layoutY="152.0" mnemonicParsing="false" onAction="#handle" text="Add subreddit">
+                        <TextField fx:id="subredditText" layoutX="242.0" layoutY="180.0" onAction="#handle" prefHeight="22.0" prefWidth="221.0" />
+                        <Button fx:id="addSubredditButton" layoutX="242.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Add subreddit" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Light" size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="removeSubredditButton" layoutX="311.0" layoutY="190.0" mnemonicParsing="false" onAction="#handle" text="Remove subreddit">
+                        <Button fx:id="removeSubredditButton" layoutX="355.0" layoutY="213.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: #353839;" text="Remove subreddit" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Light" size="12.0" />
                            </font>
@@ -75,12 +79,12 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="317.0" layoutY="79.0">
+                        <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="317.0" layoutY="119.0">
                            <image>
                               <Image url="@resources/facebook-logo-white-full-transparent.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="292.0" layoutY="120.0" text="Coming Soon..." textFill="WHITE">
+                        <Label layoutX="292.0" layoutY="160.0" text="Coming Soon..." textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Light" size="18.0" />
                            </font>
@@ -91,7 +95,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Label layoutX="222.0" layoutY="124.0" text="Add An Account" textFill="WHITE">
+      <Label layoutX="253.0" layoutY="78.0" text="Add Network" textFill="WHITE">
          <font>
             <Font name="Segoe UI Light" size="36.0" />
          </font>
@@ -111,7 +115,7 @@
             <Image url="@resources/twitter.png" />
          </image>
       </ImageView>
-      <Button fx:id="homeButton" layoutX="608.0" layoutY="32.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="#fbe870">
+      <Button fx:id="homeButton" layoutX="608.0" layoutY="32.0" mnemonicParsing="false" onAction="#handle" style="-fx-background-color: transparent;" text="&lt;HOME" textFill="WHITE">
          <font>
             <Font name="Segoe UI Bold" size="14.0" />
          </font></Button>
