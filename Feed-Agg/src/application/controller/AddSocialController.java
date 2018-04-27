@@ -90,6 +90,10 @@ public class AddSocialController {
 				}
 			}
 		}
+		
+		public void finishTwitterAuth(){
+			
+		}
 	}
 
 
