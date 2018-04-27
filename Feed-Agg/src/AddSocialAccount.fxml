@@ -31,8 +31,8 @@
                               <Font name="Segoe UI" size="12.0" />
                            </font>
                         </Label>
-                        <Text fx:id="urlTwitter" fill="WHITE" layoutX="339.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="twitter.com" />
                         <Button fx:id="twitterSubmit" layoutX="440.0" layoutY="197.0" mnemonicParsing="false" onAction="#finishTwitterAuth" text="Submit" />
+                        <TextField fx:id="urlTwitter" editable="false" layoutX="123.0" layoutY="166.0" prefHeight="22.0" prefWidth="467.0" />
                      </children>
                   </AnchorPane>
             </content>

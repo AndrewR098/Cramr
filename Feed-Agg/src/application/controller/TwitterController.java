@@ -27,7 +27,12 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
-
+/**
+ * The twitter controller handles all interactions between the user and the twitter model. It utilizes the Twitter4J library to interact with Twitter's API effectively and easily.
+ * It s
+ * @author awa794
+ *
+ */
 public class TwitterController {
 	@FXML Button homeButton;
 	@FXML TextArea userStatus;
@@ -44,7 +49,7 @@ public class TwitterController {
 	private static AccessToken userToken;
 	
 	public void initialize(){
-		ConfigurationBuilder cb = new ConfigurationBuilder();
+	/*	ConfigurationBuilder cb = new ConfigurationBuilder();
 		cb.setDebugEnabled(true)
 		  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
 		  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
@@ -53,7 +58,7 @@ public class TwitterController {
 
 
 		this.tf = new TwitterFactory(cb.build());
-		this.usertwitter = tf.getInstance();
+		this.usertwitter = tf.getInstance(); */
 		try {
 			ResponseList<Status> userHome = usertwitter.getHomeTimeline(); // Take this and display it in the status text fields.
 			this.curTimeline = userHome;
@@ -164,5 +169,35 @@ public class TwitterController {
 
 	public static void setUserToken(AccessToken userToken) {
 		TwitterController.userToken = userToken;
+	}
+
+
+	public static Twitter getUsertwitter() {
+		return usertwitter;
+	}
+
+
+	public static void setUsertwitter(Twitter usertwitter) {
+		TwitterController.usertwitter = usertwitter;
+	}
+
+
+	public static ResponseList<Status> getCurTimeline() {
+		return curTimeline;
+	}
+
+
+	public static void setCurTimeline(ResponseList<Status> curTimeline) {
+		TwitterController.curTimeline = curTimeline;
+	}
+
+
+	public static TwitterFactory getTf() {
+		return tf;
+	}
+
+
+	public static void setTf(TwitterFactory tf) {
+		TwitterController.tf = tf;
 	}
 }
