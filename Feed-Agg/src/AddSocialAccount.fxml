@@ -15,21 +15,24 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="313.0" prefWidth="700.0">
                      <children>
-                        <Button fx:id="twitterLoginButton" layoutX="328.0" layoutY="152.0" mnemonicParsing="false" onAction="#handle" text="Login">
-                           <font>
-                              <Font name="Segoe UI Light" size="12.0" />
-                           </font>
-                        </Button>
                         <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="317.0" layoutY="89.0">
                            <image>
                               <Image url="@resources/twitter.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="257.0" layoutY="118.0" text="Login through Twitter website" textFill="WHITE">
+                        <Label layoutX="186.0" layoutY="120.0" text="Login through Twitter website with the following link:" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="pinField" layoutX="283.0" layoutY="197.0" />
+                        <Label layoutX="197.0" layoutY="201.0" text="Enter Pin Here" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="urlTwitter" fill="WHITE" layoutX="339.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="twitter.com" />
+                        <Button fx:id="twitterSubmit" layoutX="440.0" layoutY="197.0" mnemonicParsing="false" onAction="#finishTwitterAuth" text="Submit" />
                      </children>
                   </AnchorPane>
             </content>
@@ -93,17 +96,17 @@
             <Font name="Segoe UI Light" size="36.0" />
          </font>
       </Label>
-      <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="454.0" layoutY="223.0">
+      <ImageView fitHeight="22.0" fitWidth="66.0" layoutX="454.0" layoutY="223.0" visible="false">
          <image>
             <Image url="@resources/facebook-logo-white-full-transparent.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="315.0" layoutY="218.0">
+      <ImageView fitHeight="31.0" fitWidth="78.0" layoutX="315.0" layoutY="218.0" visible="false">
          <image>
             <Image url="@resources/reddit-logo-white.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="173.0" layoutY="229.0">
+      <ImageView fitHeight="13.0" fitWidth="66.0" layoutX="173.0" layoutY="229.0" visible="false">
          <image>
             <Image url="@resources/twitter.png" />
          </image>

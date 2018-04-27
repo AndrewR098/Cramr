@@ -53,6 +53,6 @@
          </children>
       </Pane>
       <Button fx:id="retweet1" layoutX="656.0" layoutY="259.0" mnemonicParsing="false" onAction="#retweetStatus" text="RT" />
-      <Button fx:id="like1" layoutX="653.0" layoutY="281.0" mnemonicParsing="false" text="Like" />
+      <Button fx:id="like1" layoutX="653.0" layoutY="281.0" mnemonicParsing="false" onAction="#likeStatus" text="Like" />
    </children>
 </AnchorPane>
