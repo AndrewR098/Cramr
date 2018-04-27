@@ -128,6 +128,8 @@
     <end type="TARGET" refId="11"/>  
   </dependency>  
   <dependency id="16">    
+    <bendpoint x="1334" y="456"/>    
+    <bendpoint x="1475" y="485"/>    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="5"/>  
   </dependency>  
@@ -160,6 +162,7 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="24">    
+    <bendpoint x="1128" y="416"/>    
     <end type="SOURCE" refId="4" navigable="false">      
       <attribute id="25" name="rFeeds">        
         <position height="0" width="0" x="0" y="0"/>      
