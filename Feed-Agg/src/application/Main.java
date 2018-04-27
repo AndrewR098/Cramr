@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 /**
- * 
+ * Main launcher class, also handles opening web browser
  * @author Seth Chick
  *
  */
