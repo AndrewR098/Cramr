@@ -55,11 +55,14 @@ public class AddSocialController {
 		TextField urlTwitter;
 		public static boolean added, removed;
 		public static RequestToken requestToken;
+		public static boolean updateHome;
 		
 		/**
 		 * Twitter login setup
 		 */
 		public void initialize(){
+			updateHome = false;
+			System.out.println("update home is " + updateHome);
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
 			  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
@@ -134,15 +137,17 @@ public class AddSocialController {
 			String pin = pinField.getText();
 			try {
                 if (pin.length() > 0) {
+                	updateHome= true;
     				JOptionPane.showMessageDialog(null, "This Twitter Account has been added to your feeds");
                     TwitterController.setUserToken(TwitterController.getUsertwitter().getOAuthAccessToken(requestToken, pin));
                 } else {
+                	updateHome= true;
                 	JOptionPane.showMessageDialog(null, "This Twitter Account has been added to your feeds");
                 	TwitterController.setUserToken(TwitterController.getUsertwitter().getOAuthAccessToken(requestToken));
                 }
             } catch (TwitterException te) {
                 if (401 == te.getStatusCode()) {
-                    System.out.println("Unable to get the access token.");
+                	System.out.println("Unable to get the access token.");
                 } else {
                     te.printStackTrace();
                 }

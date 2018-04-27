@@ -148,20 +148,20 @@ public class HomeController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		//Reddit/////////////////////////////////////
 		refreshReddit();
 		twitterButton.setDisable(disTwitter);
 		try {
 			if(TwitterController.usertwitter==null){
-				hpTweets.add("No Twitter account associated with Cramr...\nSign in to see your feed!");
+				hpTweets.add("No Twitter account associated with Cramr...");
 				twFeed.setItems(hpTweets);
 				return;
 			}
-			
+		
+			if(AddSocialController.updateHome == true){
 			ResponseList<Status> userHome = TwitterController.usertwitter.getHomeTimeline();
 
 			TwitterController.curTimeline = userHome;
-			TweetView toAdd;
+
 			
 			for(Status value: userHome){
 				String str="";
@@ -169,12 +169,12 @@ public class HomeController implements Initializable{
 				hpTweets.add(str);
 				twFeed.setItems(hpTweets);
 			}
+			}
 		} catch (TwitterException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//////////////////REDDIT: END///////////////////////////
+
 		
 	}
 	//////////////////////////REDDIT START///////////////////////
