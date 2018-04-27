@@ -23,3 +23,6 @@ Or you can create your own.
 # Removed features due to certain circumstances
 - Facebook had to be discontinued due to changes to their system after the whole privacy controversy
 - Flickr was discontinued
+--------------------------------------------------------
+# Bugs/Bugged Features
+- TWITTER - Retweeting and liking works. However, undoing retweets and likes is broken.
