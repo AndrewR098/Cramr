@@ -43,9 +43,9 @@ public class TwitterController {
 	@FXML TableColumn<TweetView, String> userColumn;
 	@FXML TableColumn<TweetView, String> tweetColumn;
 	@FXML Button retweet1, like1;
-	private static Twitter usertwitter;
+	static Twitter usertwitter;
 	private static TwitterFactory tf;
-	private static ResponseList<Status> curTimeline;
+	static ResponseList<Status> curTimeline;
 	private static AccessToken userToken;
 	
 	public void initialize(){

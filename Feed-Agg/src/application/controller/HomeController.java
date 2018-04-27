@@ -17,6 +17,9 @@ import com.victorlaerte.asynctask.AsyncTask;
 
 import application.Main;
 import application.model.Feed;
+import application.model.TweetView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +31,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import twitter4j.ResponseList;
+import twitter4j.Status;
+import twitter4j.TwitterException;
 /**
  * @author Sam Carey
  * @author Melina KleinΩxcv d
@@ -55,6 +61,7 @@ public class HomeController implements Initializable{
 	////////////TWITTER//////////////////////////
 	@FXML
 	ListView<String> twFeed;
+	ObservableList<String> hpTweets=  FXCollections.observableArrayList();
 	@FXML
 	Button refreshTwitter,newTweet;
 	/////////////////REDDIT//////////////////////
@@ -143,6 +150,26 @@ public class HomeController implements Initializable{
 		//Reddit/////////////////////////////////////
 		refreshReddit();
 		twitterButton.setDisable(disTwitter);
+		try {
+			if(TwitterController.usertwitter==null){
+				return;
+			}
+			ResponseList<Status> userHome = TwitterController.usertwitter.getHomeTimeline();
+
+			TwitterController.curTimeline = userHome;
+			TweetView toAdd;
+			
+			for(Status value: userHome){
+				String str="";
+				str = value.getUser().getScreenName() +"\n"+value.getText();
+				hpTweets.add(str);
+				twFeed.setItems(hpTweets);
+			}
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		//////////////////REDDIT: END///////////////////////////
 		
 	}
