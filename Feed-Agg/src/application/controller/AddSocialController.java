@@ -26,7 +26,7 @@ import twitter4j.conf.ConfigurationBuilder;
 
 /**
  * Add social feeds to the user profile.
- * @author Casey Hammond
+ * @author Casey Hammond, Andrew Rodriguez, Cristian Cisneros
  * 
  */
 public class AddSocialController {
@@ -129,7 +129,7 @@ public class AddSocialController {
 		}
 		
 		/**
-		 * Authenticate twitter logins.
+		 * Authenticate twitter logins after the user submits the pin.
 		 */
 		public void finishTwitterAuth(){
 			String pin = pinField.getText();

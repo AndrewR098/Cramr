@@ -29,6 +29,10 @@ public class SplashController implements EventHandler {
 	@FXML
 	private TextField usernameField;
 
+	/**
+	 * Handle the event that the user chooses to go log in.
+	 * @param event Event: button pressed
+	 */
 	@Override
 	public void handle(Event event) {
 		try {
@@ -40,6 +44,10 @@ public class SplashController implements EventHandler {
 			e.printStackTrace();
 		}		
 	}
+	/**
+	 * Handle the event that the user needs to sign up
+	 * @param event Event: button pressed
+	 */
 	public void signUpHandle(Event event) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/CreateNew.fxml"));
@@ -51,6 +59,10 @@ public class SplashController implements EventHandler {
 		}		
 	}
 	
+	/**
+	 * deprecated function.
+	 * @param event
+	 */
 	public void handleTest(Event event){
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/RSSTest.fxml"));

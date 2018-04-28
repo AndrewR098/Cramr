@@ -5,7 +5,12 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
-
+/**
+ * Deprecated class, was meant to store access tokens and twitter instance.
+ * @author awa794
+ *
+ */
+@Deprecated
 public class UserTwitter {
 	private Twitter twitter;
 	private AccessToken access;

@@ -29,7 +29,7 @@ import twitter4j.auth.AccessToken;
 import twitter4j.conf.ConfigurationBuilder;
 /**
  * The twitter controller handles all interactions between the user and the twitter model. It utilizes the Twitter4J library to interact with Twitter's API effectively and easily.
- * @author awa794
+ * @author Andrew Rodriguez, Cristian Cisneros 
  *
  */
 public class TwitterController {
@@ -82,7 +82,7 @@ public class TwitterController {
 	}
 	
 	/**
-	 * If user clicks TWEET, post whatever they have typed to twitter.
+	 * If user clicks TWEET, post whatever they have typed to twitter, as long as it is not too long.
 	 */
 	public void postTweet(){
 		String toPost = userStatus.getText();
@@ -138,7 +138,7 @@ public class TwitterController {
 	/**
 	 * Get tweets from the users feed.
 	 * @param userHome
-	 * @return
+	 * @return tweets: List of tweets from user's home timeline
 	 */
 	public ObservableList<TweetView> getTweets(ResponseList<Status> userHome){
 		ObservableList<TweetView> tweets = FXCollections.observableArrayList();
@@ -167,42 +167,66 @@ public class TwitterController {
 		}  
 	}
 
-
+	/**
+	 * get user access token
+	 * @return
+	 */
 	public static AccessToken getUserToken() {
 		return userToken;
 	}
 
-
+	/**
+	 * set user access token
+	 * @param userToken
+	 */
 	public static void setUserToken(AccessToken userToken) {
 		TwitterController.userToken = userToken;
 	}
 
-
+	/**
+	 * get user twitter instance
+	 * @return
+	 */
 	public static Twitter getUsertwitter() {
 		return usertwitter;
 	}
 
-
+	/** 
+	 * set user twitter instance
+	 * @param usertwitter
+	 */
 	public static void setUsertwitter(Twitter usertwitter) {
 		TwitterController.usertwitter = usertwitter;
 	}
 
-
+	/**
+	 * Get last loaded timeline. Useful to avoid making excessive calls to the API.
+	 * @return
+	 */
 	public static ResponseList<Status> getCurTimeline() {
 		return curTimeline;
 	}
 
-
+	/**
+	 * Set timeline.
+	 * @param curTimeline
+	 */
 	public static void setCurTimeline(ResponseList<Status> curTimeline) {
 		TwitterController.curTimeline = curTimeline;
 	}
 
-
+	/**
+	 * twitter factory, necessary to set twitter instance when we add our account.
+	 * @return
+	 */
 	public static TwitterFactory getTf() {
 		return tf;
 	}
 
-
+	/**
+	 * set the twitter factory.
+	 * @param tf
+	 */
 	public static void setTf(TwitterFactory tf) {
 		TwitterController.tf = tf;
 	}

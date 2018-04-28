@@ -47,7 +47,10 @@ public class RedditController implements Initializable{
 	ListView<String> subreddits;
 	
 	
-	
+	/**
+	 * Handles the user going back to the home page.
+	 * @param event1 Event: home button pressed.
+	 */
 	public void handle(Event event1) {
 		Button pressedButton = (Button) event1.getSource();
 		if (pressedButton == homeButton) {
@@ -62,6 +65,11 @@ public class RedditController implements Initializable{
 		}
 	}
 
+	/**
+	 * Load the user's subreddits into the list view.
+	 * @param location URL
+	 * @param resources ResourceBundle
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		feeds = new ArrayList<Feed>();
