@@ -25,8 +25,22 @@ Or you can create your own.
 --------------------------------------------------------
 # Removed features due to certain circumstances
 - Facebook had to be discontinued due to changes to their system after the whole privacy controversy
-- Flickr was discontinued
+- Flickr was discontinued due to time constraints.
+- Customizable home page was not implemented. Feeds display by default and ask you to populate them if there is nothing to display.
+- Tweeting from the home page was removed.
 --------------------------------------------------------
 # Bugs/Bugged Features
-- TWITTER - Retweeting and liking works. However, undoing retweets and likes is broken.
+- TWITTER - Retweeting and liking works. However, undoing retweets and likes is broken. Only implemented for first tweet on timeline.
 - TWITTER - Likes on retweeted tweets on your timeline always show as 0.
+--------------------------------------------------------
+# Twitter NOTES:
+- The Twitter API only handles 15 API requests per 15 minutes. Please limit loading back and forth between the twitter subview once you have authenticated the account.
+- The Twitter Authentication process requires you to access login, authorize the app, and then provide the pin back to the program. 
+- For security purposes, Twitter access tokens are not stored. You will need to authenticate each time you launch the app.
+- Cramr is able to load the user's timeline (20 tweets)
+- Cramr is able to post to the user's account.
+--------------------------------------------------------
+# Reddit NOTES:
+- You can manage subreddit subscriptions by clicking the plus sign and swapping to the Reddit tab to add and delete subreddits.
+- You can view subscriptions on the home page.
+- You can click on any item in any reddit feed to load the link in your default browser.
