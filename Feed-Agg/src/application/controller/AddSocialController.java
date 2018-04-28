@@ -64,14 +64,14 @@ public class AddSocialController {
 			updateHome = false;
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
-			  .setOAuthConsumerKey("Wv1rENxyN1vfGlHOKiHdwWj3a")
-			  .setOAuthConsumerSecret("GtaSVHBRjyprBM1gjMxo7h5ZWF8uN4gD86HeAqgc1CtoiBHd0Y");
+			  .setOAuthConsumerKey("m11rTAwm0FvUNqa0byhh9Z4fa")
+			  .setOAuthConsumerSecret("BdfxxBhzfROJ4k3BJHAGQw0tg1sLz0OxJPa1evjEDbofq4q4c3");
 			TwitterFactory temp = new TwitterFactory(cb.build());
 			TwitterController.setTf(temp);
 			TwitterController.setUsertwitter(temp.getInstance());
 			try {
 				requestToken = TwitterController.getUsertwitter().getOAuthRequestToken();
-				System.out.println(requestToken.getToken() + "\n" + requestToken.getTokenSecret());
+	//			System.out.println(requestToken.getToken() + "\n" + requestToken.getTokenSecret());
 				urlTwitter.setText(requestToken.getAuthorizationURL());
 			} catch (TwitterException e){
 				e.printStackTrace();
@@ -133,6 +133,7 @@ public class AddSocialController {
 		 */
 		public void finishTwitterAuth(){
 			String pin = pinField.getText();
+			pin.trim();
 			try {
                 if (pin.length() > 0) {
                 	updateHome= true;
@@ -151,11 +152,11 @@ public class AddSocialController {
                 }
             }
 
-			System.out.println(TwitterController.getUserToken().getToken() + "\n" + TwitterController.getUserToken().getTokenSecret());
+	//		System.out.println(TwitterController.getUserToken().getToken() + "\n" + TwitterController.getUserToken().getTokenSecret());
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
-			  .setOAuthConsumerKey("QaUhgYDbP3mOQR8DZLgK9RZfa")
-			  .setOAuthConsumerSecret("U58SF3hL5eKoWXoCa9AE7dR0CO25aLH8bDB2KIsUtZuNUu5Mvm")
+			  .setOAuthConsumerKey("m11rTAwm0FvUNqa0byhh9Z4fa")
+			  .setOAuthConsumerSecret("BdfxxBhzfROJ4k3BJHAGQw0tg1sLz0OxJPa1evjEDbofq4q4c3")
 			  .setOAuthAccessToken(TwitterController.getUserToken().getToken())
 			  .setOAuthAccessTokenSecret(TwitterController.getUserToken().getTokenSecret());
 			TwitterFactory temp = new TwitterFactory(cb.build());
